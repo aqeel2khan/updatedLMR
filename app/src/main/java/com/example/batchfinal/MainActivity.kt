@@ -20,6 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
+
+
     private val viewModel: AllViewModel by viewModels()
     private lateinit var navController: NavController
 
