@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/meal_navigation"
+    app:startDestination="@id/mealBatchFragment">
+
+    <fragment
+        android:id="@+id/mealBatchFragment"
+        android:name="com.example.batchfinal.view.fragment.MealFragment"
+        tools:layout="@layout/fragment_meal">
+
+
+    </fragment>
+
+</navigation>

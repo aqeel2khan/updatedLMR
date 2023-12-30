@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">Basic LMR</string>
+    <string name="terms_condition">I agree to the company <font color='#516634'>Terms &amp; Conditions</font></string>
+
+    <!--add new string-->
+    <string name="please_check_internet">Please check Internet connection and try again.</string>
+    <string name="txt_batch">Batches</string>
+    <string name="sign_in">Sign In</string>
+    <string name="txt_motivations">Motivator</string>
+    <string name="txt_home">Batchboard</string>
+    <string name="agree_and_continue">Agree And Continue</string>
+    <string name="log_in">Log in</string>
+    <string name="male">Male</string>
+    <string name="i_want_look">I want to look around</string>
+    <string name="female">Female</string>
+    <string name="already_account">Already have an account ? <font color='#516634'><b>Sign In</b></font></string>
+    <string name="before_we_start">Before we start, we need to know \nyour gender</string>
+    <string name="continue_text">Continue</string>
+    <string name="verification_code">Enter verification code</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="welcome_back_bath">Welcome to Batch!</string>
+    <string name="verification_number">We have sent the code verification to\n      your mobile number </string>
+    <string name="sign_in_account">Sign In to your account</string>
+    <string name="sign_in_google">Sign in with Google</string>
+    <string name="sign_in_outlook">Sign in with Outlook</string>
+    <string name="sign_in_facebook">Sign in with Facebook</string>
+    <string name="sign_in_apple">Sign in with Apple</string>
+    <string name="I_agree_term">I agree to the company</string>
+    <string name="term_condition"> Terms &amp; Conditions</string>
+    <string name="email">Email</string>
+    <string name="or_continue">Or continue with</string>
+    <string name="batchboard">Batchboard</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur">Lorem ipsum dolor sit amet consectetur.</string>
+    <string name="lorem_ipsum_dolor_sit">Lorem ipsum dolor sit</string>
+    <string name="the_code_is_invalid_please_try_again">The code is invalid. Please try again.</string>
+    <string name="ar">AR</string>
+    <string name="termCondition">Lorem ipsum dolor sit amet consectetur. Sed venenatis in nulla neque elementum nunc. Vitae est in elementum morbi sagittis lobortis aliquam sed vestibulum. Mattis auctor hac cursus urna risus interdum et. Neque ut ultricies fringilla in nulla. \n\n
+At nulla orci egestas a lorem aliquam consectetur magna. Id id lacus eu commodo fusce tempus augue turpis vivamus. Tempus malesuada a amet eget vitae integer scelerisque tristique mauris. Eget id iaculis massa morbi ultrices tincidunt. Hac diam feugiat pretium enim nibh duis non mollis facilisi.Lorem ipsum dolor sit amet consectetur.\n\n
+Sed venenatis in nulla neque elementum nunc. Vitae est in elementum morbi sagittis lobortis aliquam sed vestibulum. Mattis auctor hac cursus urna risus interdum et. Neque ut ultricies fringilla in nulla. At nulla orci egestas a lorem aliquam consectetur magna. Id id lacus eu commodo fusce tempus augue turpis vivamus. Tempus malesuada a amet eget vitae integer scelerisque tristique mauris. Eget id iaculis massa morbi ultrices tincidunt. Hac diam feugiat pretium enim nibh duis non mollis facilisi.</string>
+    <string name="select_country_region">Select Country / Region</string>
+    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="subscribe_for_a_course">Subscribe for a Course</string>
+    <string name="_15_20_min">15-20 min</string>
+
+    <!--workout txt-->
+    <string name="current_batch">Current Batch</string>
+    <string name="workout_batch">WorkOut Batch</string>
+    <string name="workout_batchs">WorkOut Batches</string>
+    <string name="txt_days"> days</string>
+    <string name="txt_Stretching">Stretching</string>
+    <string name="txt_follow">Follow</string>
+    <string name="txt_trainer_content">Highly experienced yoga and pilates instructor \nwith over 7 years of expertise in guiding \n students towards their wellness goals.</string>
+    <string name="txt_recommended_product">Recommended Products</string>
+    <string name="txt_doller_sign">$</string>
+
+    <!--weight loss-->
+    <string-array name="week">
+        <item>1 Weeks</item>
+        <item>2 Weeks</item>
+        <item>3 Weeks</item>
+        <item>4 Weeks</item>
+    </string-array>
+
+    <!--buy subscription text-->
+    <string name="workout_batch_capital">WORKOUT BATCH</string>
+    <string name="txt_weight_loss">Weight Lost</string>
+    <string name="txt_plan_duration">Select plan duration</string>
+    <string name="txt_batch_pro">BATCH PRO</string>
+    <string name="txt_get_batch_pro">Get Batch Pro</string>
+    <string name="txt_check_out">Checkout</string>
+    <string name="txt_add_pro">Add Promo code</string>
+    <string name="txt_start_workout">Start the Workout</string>
+    <string name="txt_channge_course">Change the Course</string>
+    <string name="txt_get_batch_pro_content">Get unlimited access and save up to 10% on every \ncourse with pro</string>
+</resources>

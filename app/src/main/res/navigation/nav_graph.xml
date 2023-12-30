@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.batchfinal.view.fragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_fragment_to_workout_fragment"
+            app:destination="@id/workout_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workout_fragment"
+        android:name="com.example.batchfinal.view.fragment.WorkOutFragment"
+        android:label="WorkOut"
+        tools:layout="@layout/fragment_work_out" >
+        <action
+            android:id="@+id/action_workout_fragment_to_meal_fragment"
+            app:destination="@id/meal_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/meal_fragment"
+        android:name="com.example.batchfinal.view.fragment.MealFragment"
+        android:label="Meal"
+        tools:layout="@layout/fragment_meal" >
+        <action
+            android:id="@+id/action_meal_fragment_to_shopping_fragment"
+            app:destination="@id/shopping_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shopping_fragment"
+        android:name="com.example.batchfinal.view.fragment.ShoppingFragment"
+        android:label="Shopping"
+        tools:layout="@layout/fragment_shopping" >
+        <action
+            android:id="@+id/action_shopping_fragment_to_scanning_fragment"
+            app:destination="@id/scanning_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanning_fragment"
+        android:name="com.example.batchfinal.view.fragment.ScanningFragment"
+        android:label="Scanning"
+        tools:layout="@layout/fragment_scanning" />
+</navigation>

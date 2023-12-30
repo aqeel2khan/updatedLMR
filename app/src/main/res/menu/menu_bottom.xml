@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home_fragment"
+        android:title=""
+        android:icon="@drawable/iv_home"
+        android:iconTint="@color/white"/>
+
+    <item
+        android:id="@+id/workout_fragment"
+        android:title=""
+        android:icon="@drawable/iv_workout"/>
+
+    <item
+        android:id="@+id/meal_fragment"
+        android:title=""
+        android:icon="@drawable/iv_meal"/>
+
+    <item
+        android:id="@+id/shopping_fragment"
+        android:title=""
+        android:icon="@drawable/iv_shoping"/>
+    <item
+        android:id="@+id/scanning_fragment"
+        android:title=""
+        android:icon="@drawable/iv_scaning"/>
+
+</menu>
