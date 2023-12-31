@@ -10,8 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.ajzoproject.databinding.ActivityBasicDetailsBinding
-import com.example.ajzoproject.databinding.ActivityDateTime3Binding
+import com.example.batchfinal.R
+import com.example.batchfinal.databinding.ActivityDateTime3Binding
 import java.util.Calendar
 
 

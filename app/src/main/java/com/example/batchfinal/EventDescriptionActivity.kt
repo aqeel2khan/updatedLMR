@@ -6,7 +6,8 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.ajzoproject.databinding.ActivityEventDescriptionBinding
+import com.example.batchfinal.R
+import com.example.batchfinal.databinding.ActivityEventDescriptionBinding
 
 class EventDescriptionActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityEventDescriptionBinding

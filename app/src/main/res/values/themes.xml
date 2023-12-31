@@ -22,6 +22,11 @@
     <declare-styleable name="CustomView">
         <attr name="fontcustom" format="string" />
     </declare-styleable>
+
+    <style name="CustomBottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:backgroundDimAmount">0.3</item>
+        <!-- You can customize other properties as needed -->
+    </style>
     <style name="Bottom_sheet_dialog">
         <item name="android:textSize">@dimen/_10ssp</item>
         <item name="android:drawablePadding">@dimen/_20ssp</item>

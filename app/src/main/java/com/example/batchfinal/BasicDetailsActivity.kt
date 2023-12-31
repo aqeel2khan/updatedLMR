@@ -9,7 +9,8 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.ajzoproject.databinding.ActivityBasicDetailsBinding
+import com.example.batchfinal.R
+import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
 
 
 class BasicDetailsActivity : AppCompatActivity() {

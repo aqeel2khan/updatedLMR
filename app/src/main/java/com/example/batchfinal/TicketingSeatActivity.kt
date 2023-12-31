@@ -8,8 +8,9 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
-import com.example.ajzoproject.databinding.ActivityDashboardBinding
-import com.example.ajzoproject.databinding.ActivityTicketingSeatBinding
+import com.example.batchfinal.R
+
+import com.example.batchfinal.databinding.ActivityTicketingSeatBinding
 
 class TicketingSeatActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityTicketingSeatBinding

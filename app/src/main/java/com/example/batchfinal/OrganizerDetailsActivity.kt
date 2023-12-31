@@ -15,9 +15,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.ajzoproject.databinding.ActivityDateTime3Binding
-import com.example.ajzoproject.databinding.ActivityLocationBinding
-import com.example.ajzoproject.databinding.ActivityOrganigerDetailsBinding
+import com.example.batchfinal.R
+
+import com.example.batchfinal.databinding.ActivityOrganigerDetailsBinding
 import java.io.File
 
 

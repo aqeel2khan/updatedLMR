@@ -3,7 +3,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ajzoproject.databinding.ActivityEjzoBinding
+import com.example.batchfinal.R
+import com.example.batchfinal.databinding.ActivityEjzoBinding
 
 class EjzoActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityEjzoBinding

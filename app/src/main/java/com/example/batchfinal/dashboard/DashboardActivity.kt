@@ -2,13 +2,13 @@ package com.example.ajzoproject.dashboard
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.ajzoproject.R
-import com.example.ajzoproject.databinding.ActivityDashboardBinding
 import com.example.ajzoproject.fragment.BookedFragment
 import com.example.ajzoproject.fragment.CreateEventFragment
 import com.example.ajzoproject.fragment.DashboardFragment
 import com.example.ajzoproject.fragment.ProfileFragment
 import com.example.ajzoproject.fragment.SearchFragment
+import com.example.batchfinal.R
+import com.example.batchfinal.databinding.ActivityDashboardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 class DashboardActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityDashboardBinding

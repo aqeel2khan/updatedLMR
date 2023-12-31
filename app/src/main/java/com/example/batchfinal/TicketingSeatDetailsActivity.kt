@@ -10,8 +10,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.ajzoproject.dashboard.DashboardActivity
-import com.example.ajzoproject.databinding.ActivityTickeetingSeatDetails1Binding
+import com.example.batchfinal.R
+import com.example.batchfinal.databinding.ActivityTickeetingSeatDetails1Binding
 import java.util.Calendar
 
 @Suppress("UNREACHABLE_CODE")

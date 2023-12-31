@@ -7,7 +7,8 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ajzoproject.dashboard.DashboardActivity
-import com.example.ajzoproject.databinding.ActivityPreviewsBinding
+import com.example.batchfinal.R
+import com.example.batchfinal.databinding.ActivityPreviewsBinding
 
 
 @Suppress("DEPRECATED_IDENTITY_EQUALS")
