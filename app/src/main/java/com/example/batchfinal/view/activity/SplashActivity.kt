@@ -1,5 +1,6 @@
 package com.example.batchfinal.view.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+@SuppressLint("CustomSplashScreen")
 @AndroidEntryPoint
 class SplashActivity : BaseActivity<ActivitySplashBinding>() {
     private val viewModel: AllViewModel by viewModels()
@@ -22,7 +24,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
     override fun initUi() {
         binding.apply {
             Handler(Looper.myLooper()!!).postDelayed({
-                startActivity(Intent(this@SplashActivity, OnBoardingActivity::class.java).addFlags(
+                startActivity(Intent(this@SplashActivity, LoginActivity::class.java).addFlags(
                     Intent.FLAG_ACTIVITY_NEW_TASK).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK))
                 finish()
 
