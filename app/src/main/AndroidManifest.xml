@@ -12,42 +12,86 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BatchFinal"
         tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name=".view.activity.WeightLossBatchActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".view.activity.BuySubscriptionActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".view.activity.MotivatorDetailActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".view.activity.SplashActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity
-            android:name=".view.activity.WeightLossBatchActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activity.BuySubscriptionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activity.MotivatorDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activity.SplashActivity"
-            android:exported="true">
+            android:name="com.example.ajzoproject.EjzoActivity"
+            android:exported="true"
+            tools:ignore="DuplicateActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".view.activity.ExploreActivity"
+            android:name="com.example.ajzoproject.EventActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.VerificationActivity"
+            android:name="com.example.ajzoproject.PreviewsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.LoginActivity"
+            android:name="com.example.ajzoproject.dashboard.DashboardActivity"
+            android:exported="false" />
+<!--        <activity-->
+<!--            android:name="com.example.ajzoproject.BottomSheetFragment"-->
+<!--            android:exported="false" />-->
+        <activity
+            android:name="com.example.ajzoproject.TicketingSeatDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.OnBoardingActivity"
+            android:name="com.example.ajzoproject.OrganizerDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activity.WeightLossActivity"
+            android:name="com.example.ajzoproject.LocationActivity"
             android:exported="false" />
+        <activity
+            android:name="com.example.ajzoproject.TicketingSeatActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.ajzoproject.DateTime3Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.ajzoproject.EventDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.ajzoproject.BasicDetailsActivity"
+            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".view.activity.ExploreActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".view.activity.VerificationActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".view.activity.LoginActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".view.activity.OnBoardingActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".view.activity.WeightLossActivity"-->
+<!--            android:exported="false" />-->
     </application>
 
 </manifest>

@@ -33,21 +33,30 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
        buttonClicks()
     }
 
+    @SuppressLint("ResourceAsColor")
     private fun buttonClicks() {
-        binding.signButton.setOnClickListener {
-            startActivity(Intent(Intent(this, VerificationActivity::class.java)))
+        binding.personalTextView.setOnClickListener {
+            binding.personalTextView.setBackgroundResource(R.drawable.circle_shap_allo)
+            binding.personalTextView.setTextColor(R.color.blue)
+            binding.businessTextView.setBackgroundResource(R.drawable.circle_shap)
+            binding.businessTextView.setTextColor(R.color.grey)
         }
-        binding.termsCondition.setOnClickListener {  val bottomSheetDialog = BottomSheetDialog(this)
-            val bottomSheetView: View = layoutInflater.inflate(R.layout.terms_conditions, null)
-            bottomSheetDialog.setContentView(bottomSheetView)
-            bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_EXPANDED
-            bottomSheetDialog.show()
-            val closeButton = bottomSheetView.findViewById<Button>(R.id.agreeAndContinueButton)
-            closeButton.setOnClickListener {
-                bottomSheetDialog.dismiss()
-                showToast("you are agree this condition")
-            } }
 
+        binding.businessTextView.setOnClickListener {
+            binding.businessTextView.setBackgroundResource(R.drawable.circle_shap_allo)
+            binding.businessTextView.setTextColor(R.color.blue)
+            binding.personalTextView.setBackgroundResource(R.drawable.circle_shap)
+            binding.personalTextView.setTextColor(R.color.grey)
+        }
+
+        binding.loginButton.setOnClickListener {
+            val intentObj = Intent(this, VerificationActivity::class.java)
+            val numberType = binding.numberEditText.text.toString()
+            val countryCode = binding.countryCodeText.text.toString()
+            intentObj.putExtra("number", numberType)
+            intentObj.putExtra("CountryCode", countryCode)
+            startActivity(intentObj)
+        }
     }
 
     override fun getViewBinding() = ActivityLoginBinding.inflate(layoutInflater)

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><!-- custom_dropdown_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <stroke android:width="0.5dp"
+        android:color="#676767"/>
+    <solid android:color="@color/light_transparent"  />
+    <corners android:radius="4dp" />
+</shape>
