@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.ajzoproject.R
+import com.example.batchfinal.R
 
 /**
  * Dialog to View Image
