@@ -14,5 +14,5 @@ dependencyResolutionManagement {
         maven { url 'https://www.jitpack.io' }
     }
 }
-rootProject.name = "BatchFinal"
+rootProject.name = "LMR"
 include ':app'

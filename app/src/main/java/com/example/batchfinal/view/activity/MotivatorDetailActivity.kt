@@ -23,7 +23,7 @@ class MotivatorDetailActivity : BaseActivity<ActivityMotivatorDetailBinding>() {
    private val viewModel: AllViewModel by viewModels()
 
     var courseImg = ArrayList(Arrays.asList(
-        R.drawable.sign_bg, R.drawable.food,
+        R.drawable.ic_arrow, R.drawable.food,
         R.drawable.profile_image, R.drawable.normal_boy)
     )
     var techerName = ArrayList(

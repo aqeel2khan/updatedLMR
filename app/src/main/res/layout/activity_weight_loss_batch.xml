@@ -10,7 +10,7 @@
         android:id="@+id/exercise_image"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@drawable/exercise_image"
+        android:background="@drawable/ic_launcher_background"
         android:orientation="horizontal">
 
         <ImageView
