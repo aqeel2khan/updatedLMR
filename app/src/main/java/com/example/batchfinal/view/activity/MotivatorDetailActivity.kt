@@ -71,7 +71,7 @@ class MotivatorDetailActivity : BaseActivity<ActivityMotivatorDetailBinding>() {
             override fun onPositionItemSelected(item: String, postions: Int) {
                 startActivity(Intent(this@MotivatorDetailActivity, WeightLossActivity::class.java))
             }
-
+`
         })
     }
 
