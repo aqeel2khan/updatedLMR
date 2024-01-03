@@ -1,4 +1,4 @@
-package com.example.ajzoproject.camera
+package com.example.batchfinal.camera
 
 import android.net.Uri
 import android.widget.ImageView

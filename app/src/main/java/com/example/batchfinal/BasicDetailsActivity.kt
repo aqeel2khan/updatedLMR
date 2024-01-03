@@ -1,24 +1,15 @@
-package com.example.ajzoproject
+package com.example.batchfinal
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.TextView
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
 import com.example.batchfinal.view.BaseActivity
-import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
 import com.example.batchfinal.viewmodel.BasicDetailViewModel
 import com.google.gson.JsonObject
 import dagger.hilt.android.AndroidEntryPoint
-import org.json.JSONObject
 
 @AndroidEntryPoint
 class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
@@ -29,44 +20,7 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
     private var isPublicEvent = true
     private var isFreeEvent = true
     private var isPaidEvent = true
-//    @SuppressLint("MissingInflatedId")
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_basic_details)
-//        mBinding = ActivityBasicDetailsBinding.inflate(layoutInflater)
-//        setContentView(mBinding.root)
-//
-//        val toolbar: Toolbar = findViewById(R.id.toolbar)
-//        setSupportActionBar(toolbar)
-//        supportActionBar!!.setDisplayShowTitleEnabled(false)
-//
-//        mBinding.publicEvent.setOnClickListener {
-//            isPrivateEvent = !isPrivateEvent
-//            mBinding.publicEvent.isChecked = isPrivateEvent
-//        }
-//
-//        mBinding.privateEvent.setOnClickListener {
-//            isPublicEvent = !isPublicEvent
-//            mBinding.privateEvent.isChecked = isPublicEvent
-//        }
-//        mBinding.freeEvent.setOnClickListener {
-//            isFreeEvent = !isFreeEvent
-//            mBinding.freeEvent.isChecked = isFreeEvent
-//        }
-//        mBinding.paidEvent.setOnClickListener {
-//            isPaidEvent = !isPaidEvent
-//            mBinding.paidEvent.isChecked = isPaidEvent
-//        }
-//
-//        customSpinnerChooseEventCategory();
-//        customSpinnerEvent();
-//        customSpinnerTotalMaximumCapacity();
-//        customSpinnerAgeGroup();
-//
-//        mBinding.saveAndContinueButtonBasic.setOnClickListener {
-//            startActivity(Intent(this, EventDescriptionActivity::class.java))
-//        }
-//    }
+
 
     override fun getViewModel(): BaseViewModel {
         return viewModel
@@ -105,6 +59,7 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
         customSpinnerAgeGroup();
 
         binding.saveAndContinueButtonBasic.setOnClickListener {
+
             startActivity(Intent(this, EventDescriptionActivity::class.java))
         }
         //Todo Call API

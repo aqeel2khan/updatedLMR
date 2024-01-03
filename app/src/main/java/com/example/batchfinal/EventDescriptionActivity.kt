@@ -1,4 +1,4 @@
-package com.example.ajzoproject
+package com.example.batchfinal
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.batchfinal.R
+import com.example.ajzoproject.DateTime3Activity
 import com.example.batchfinal.databinding.ActivityEventDescriptionBinding
 
 class EventDescriptionActivity : AppCompatActivity() {
@@ -22,7 +22,7 @@ class EventDescriptionActivity : AppCompatActivity() {
 
         supportActionBar!!.setDisplayShowTitleEnabled(false)
         mBinding.saveAndContinueButton.setOnClickListener {
-            startActivity(Intent(this,DateTime3Activity::class.java))
+            startActivity(Intent(this, DateTime3Activity::class.java))
         }
         val detailsTextView = findViewById<TextView>(R.id.detailsTextView)
         detailsTextView.text = "More Details"

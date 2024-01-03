@@ -3,6 +3,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.batchfinal.BasicDetailsActivity
 import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityEjzoBinding
 
@@ -11,7 +12,7 @@ class EjzoActivity : AppCompatActivity() {
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ejzo)
+//        setContentView(R.layout.activity_ejzo)
 
         mBinding = ActivityEjzoBinding.inflate(layoutInflater)
         setContentView(mBinding.root)

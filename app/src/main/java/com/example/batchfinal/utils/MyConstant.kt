@@ -15,7 +15,7 @@ object MyConstant {
     var key ="KEY"
 
     const val BASE_URL_NOTIFY = "https://fcm.googleapis.com"
-    const val SERVER_KEY = "AAAAz8eOx3c:APA91bFR5T-Ij_ReEWqHAE_SkF-u7vTtqNiakvxgdpgo-Hq7JLJvZbtYgF_wwcgRVPn1FRIH2oGj315BgnGmcgVtSRmKI2PqxpiQ3ebE3SDrv8w31pw_hpuBSv2VUXMXcLvxNRqQflXv"
+    const val SERVER_KEY = ""
     const val CONTENT_TYPE = "application/json"
 
     const val DOLLER_SIGN = "$"
