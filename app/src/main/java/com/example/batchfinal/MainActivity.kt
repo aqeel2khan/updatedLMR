@@ -20,8 +20,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
-
-
     private val viewModel: AllViewModel by viewModels()
     private lateinit var navController: NavController
 
@@ -44,6 +42,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 //        setupSmoothBottomMenu()
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         super.onBackPressed()
         finish()

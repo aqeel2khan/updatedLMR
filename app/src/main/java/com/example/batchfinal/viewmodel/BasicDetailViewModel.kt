@@ -14,25 +14,22 @@ import javax.inject.Inject
 @HiltViewModel
 class BasicDetailViewModel @Inject constructor(
     private val userRepo: UserRepository
-): BaseViewModel() {
+) : BaseViewModel() {
 
     // Login Api
     var _loginResponse: MutableLiveData<NetworkErrorResult<LoginResponseModel>> = MutableLiveData()
 
     // Create Event Model Response
-
-    var loginResponse: LiveData<NetworkErrorResult<LoginResponseModel>> = _loginResponse
+    val loginResponse: LiveData<NetworkErrorResult<LoginResponseModel>>
         get() = _loginResponse
 
     fun loginApiCall(jsonObject: JsonObject) = viewModelScope.launch {
         userRepo.loginApi(jsonObject).collect { values ->
             _loginResponse.value = values
-
         }
     }
 
-    fun callPostEvent(jsonObject: JsonObject ) =  viewModelScope.launch {
+    fun callPostEvent(jsonObject: JsonObject) = viewModelScope.launch {
         userRepo.loginApi(jsonObject)
     }
-
 }

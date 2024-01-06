@@ -1,34 +1,23 @@
 package com.example.ajzoproject
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.TextView
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.batchfinal.EventDescriptionActivity
 import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
 import com.example.batchfinal.view.BaseActivity
-import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
 import com.example.batchfinal.viewmodel.BasicDetailViewModel
 import com.google.gson.JsonObject
 import dagger.hilt.android.AndroidEntryPoint
-import org.json.JSONObject
 
 @AndroidEntryPoint
 class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
     private val viewModel: BasicDetailViewModel by viewModels()
 
-//    private lateinit var mBinding: ActivityBasicDetailsBinding
-    private var isPrivateEvent = true
-    private var isPublicEvent = true
-    private var isFreeEvent = true
-    private var isPaidEvent = true
+    //    private lateinit var mBinding: ActivityBasicDetailsBinding
 //    @SuppressLint("MissingInflatedId")
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
@@ -72,12 +61,16 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
         return viewModel
 
     }
+
     override fun getViewBinding() = ActivityBasicDetailsBinding.inflate(layoutInflater)
 
-
+    private var isPrivateEvent = true
+    private var isPublicEvent = true
+    private var isFreeEvent = true
+    private var isPaidEvent = true
     override fun initUi() {
 
-                val toolbar: Toolbar = findViewById(R.id.toolbar)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
@@ -108,11 +101,8 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             startActivity(Intent(this, EventDescriptionActivity::class.java))
         }
         //Todo Call API
-
         viewModel.callPostEvent(JsonObject())
     }
-
-
 
 
     private fun customSpinnerEvent() {

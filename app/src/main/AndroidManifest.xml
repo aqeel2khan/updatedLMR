@@ -78,7 +78,7 @@
             android:name="com.example.ajzoproject.DateTime3Activity"
             android:exported="false" />
         <activity
-            android:name="com.example.ajzoproject.EventDescriptionActivity"
+            android:name=".EventDescriptionActivity"
             android:exported="false" />
         <activity
             android:name="com.example.ajzoproject.BasicDetailsActivity"
