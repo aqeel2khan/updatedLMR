@@ -1,29 +1,22 @@
-package com.example.ajzoproject
+package com.example.batchfinal
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
-import android.os.Bundle
-import android.os.Environment
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import android.widget.Spinner
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.batchfinal.R
-import com.example.batchfinal.databinding.ActivityMainBinding
+import com.example.ajzoproject.BottomSheetFragment
+import com.example.ajzoproject.TicketingSeatDetailsActivity
 
 import com.example.batchfinal.databinding.ActivityOrganigerDetailsBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
-import java.io.File
 
 
 class OrganizerDetailsActivity : BaseActivity<ActivityOrganigerDetailsBinding>() {
