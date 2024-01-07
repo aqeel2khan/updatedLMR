@@ -15,45 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
     private val viewModel: BasicDetailViewModel by viewModels()
 
-    //    private lateinit var mBinding: ActivityBasicDetailsBinding
-//    @SuppressLint("MissingInflatedId")
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_basic_details)
-//        mBinding = ActivityBasicDetailsBinding.inflate(layoutInflater)
-//        setContentView(mBinding.root)
-//
-//        val toolbar: Toolbar = findViewById(R.id.toolbar)
-//        setSupportActionBar(toolbar)
-//        supportActionBar!!.setDisplayShowTitleEnabled(false)
-//
-//        mBinding.publicEvent.setOnClickListener {
-//            isPrivateEvent = !isPrivateEvent
-//            mBinding.publicEvent.isChecked = isPrivateEvent
-//        }
-//
-//        mBinding.privateEvent.setOnClickListener {
-//            isPublicEvent = !isPublicEvent
-//            mBinding.privateEvent.isChecked = isPublicEvent
-//        }
-//        mBinding.freeEvent.setOnClickListener {
-//            isFreeEvent = !isFreeEvent
-//            mBinding.freeEvent.isChecked = isFreeEvent
-//        }
-//        mBinding.paidEvent.setOnClickListener {
-//            isPaidEvent = !isPaidEvent
-//            mBinding.paidEvent.isChecked = isPaidEvent
-//        }
-//
-//        customSpinnerChooseEventCategory();
-//        customSpinnerEvent();
-//        customSpinnerTotalMaximumCapacity();
-//        customSpinnerAgeGroup();
-//
-//        mBinding.saveAndContinueButtonBasic.setOnClickListener {
-//            startActivity(Intent(this, EventDescriptionActivity::class.java))
-//        }
-//    }
+
 
     override fun getViewModel(): BaseViewModel {
         return viewModel
