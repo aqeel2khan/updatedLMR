@@ -15,23 +15,22 @@ import dagger.hilt.android.AndroidEntryPoint
 class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
     private val viewModel: BasicDetailViewModel by viewModels()
 
-//    private lateinit var mBinding: ActivityBasicDetailsBinding
-    private var isPrivateEvent = true
-    private var isPublicEvent = true
-    private var isFreeEvent = true
-    private var isPaidEvent = true
 
 
     override fun getViewModel(): BaseViewModel {
         return viewModel
 
     }
+
     override fun getViewBinding() = ActivityBasicDetailsBinding.inflate(layoutInflater)
 
-
+    private var isPrivateEvent = true
+    private var isPublicEvent = true
+    private var isFreeEvent = true
+    private var isPaidEvent = true
     override fun initUi() {
 
-                val toolbar: Toolbar = findViewById(R.id.toolbar)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
@@ -59,15 +58,11 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
         customSpinnerAgeGroup();
 
         binding.saveAndContinueButtonBasic.setOnClickListener {
-
             startActivity(Intent(this, EventDescriptionActivity::class.java))
         }
         //Todo Call API
-
-        viewModel.callPostEvent(JsonObject())
+       // viewModel.callPostEvent(JsonObject())
     }
-
-
 
 
     private fun customSpinnerEvent() {

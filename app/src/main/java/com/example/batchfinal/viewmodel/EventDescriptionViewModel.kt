@@ -10,9 +10,8 @@ import com.google.gson.JsonObject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
 @HiltViewModel
-class BasicDetailViewModel @Inject constructor(
+class EventDescriptionViewModel @Inject constructor(
     private val userRepo: UserRepository
 ) : BaseViewModel() {
 

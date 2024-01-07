@@ -8,60 +8,106 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityDateTime3Binding
+import com.example.batchfinal.databinding.ActivityTickeetingSeatDetails1Binding
+import com.example.batchfinal.view.BaseActivity
+import com.example.batchfinal.viewmodel.AllViewModel
+import com.example.batchfinal.viewmodel.BaseViewModel
 import java.util.Calendar
 
 
-class DateTime3Activity() : AppCompatActivity() {
-    private lateinit var mBinding: ActivityDateTime3Binding
-    @SuppressLint("MissingInflatedId", "SetTextI18n")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_date_time3)
-        mBinding = ActivityDateTime3Binding.inflate(layoutInflater)
-        setContentView(mBinding.root)
+class DateTime3Activity() : BaseActivity<ActivityDateTime3Binding>() {
+    private val viewModel: AllViewModel by viewModels()
+//    private lateinit var mBinding: ActivityDateTime3Binding
+//    @SuppressLint("MissingInflatedId", "SetTextI18n")
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_date_time3)
+//        mBinding = ActivityDateTime3Binding.inflate(layoutInflater)
+//        setContentView(mBinding.root)
+//        val toolbar: Toolbar = findViewById(R.id.toolbar)
+//        setSupportActionBar(toolbar)
+//        val detailsTextView = findViewById<TextView>(R.id.detailsTextView)
+//        detailsTextView.text = "Date & Time"
+//
+//        supportActionBar!!.setDisplayShowTitleEnabled(false)
+//        mBinding.tvsingledayevent.setOnClickListener {
+//            mBinding.tvrecurringevent.setBackgroundResource(R.drawable.circle_shap_allo)
+//            mBinding.tvsingledayevent.setBackgroundResource(R.drawable.circel_shep_white)
+//        }
+//        mBinding.tvrecurringevent.setOnClickListener {
+//            mBinding.tvrecurringevent.setBackgroundResource(R.drawable.circel_shep_white)
+//            mBinding.tvsingledayevent.setBackgroundResource(R.drawable.circle_shap_allo)
+//        }
+//
+//        mBinding.imenddata.setOnClickListener {
+//            openCalendar2()
+//        }
+//        mBinding.imdateicon.setOnClickListener {
+//            openCalendar()
+//        }
+//        mBinding.ivStartTime.setOnClickListener {
+//            showTimeDialog()
+//
+//        }
+//        mBinding.imendtimeicon.setOnClickListener {
+//            showTimeDialog2()
+//        }
+//        mBinding.saveAndContinueButtonDateTime.setOnClickListener {
+//            startActivity(Intent(this, LocationActivity::class.java))
+//        }
+    // }
+
+    override fun getViewModel(): BaseViewModel {
+        return  viewModel
+    }
+
+    override fun initUi() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         val detailsTextView = findViewById<TextView>(R.id.detailsTextView)
         detailsTextView.text = "Date & Time"
 
         supportActionBar!!.setDisplayShowTitleEnabled(false)
-        mBinding.tvsingledayevent.setOnClickListener {
-            mBinding.tvrecurringevent.setBackgroundResource(R.drawable.circle_shap_allo)
-            mBinding.tvsingledayevent.setBackgroundResource(R.drawable.circel_shep_white)
+        binding.tvsingledayevent.setOnClickListener {
+            binding.tvrecurringevent.setBackgroundResource(R.drawable.circle_shap_allo)
+            binding.tvsingledayevent.setBackgroundResource(R.drawable.circel_shep_white)
         }
-        mBinding.tvrecurringevent.setOnClickListener {
-            mBinding.tvrecurringevent.setBackgroundResource(R.drawable.circel_shep_white)
-            mBinding.tvsingledayevent.setBackgroundResource(R.drawable.circle_shap_allo)
+        binding.tvrecurringevent.setOnClickListener {
+            binding.tvrecurringevent.setBackgroundResource(R.drawable.circel_shep_white)
+            binding.tvsingledayevent.setBackgroundResource(R.drawable.circle_shap_allo)
         }
 
-        mBinding.imenddata.setOnClickListener {
+        binding.imenddata.setOnClickListener {
             openCalendar2()
         }
-        mBinding.imdateicon.setOnClickListener {
+        binding.imdateicon.setOnClickListener {
             openCalendar()
         }
-        mBinding.ivStartTime.setOnClickListener {
+        binding.ivStartTime.setOnClickListener {
             showTimeDialog()
 
         }
-        mBinding.imendtimeicon.setOnClickListener {
+        binding.imendtimeicon.setOnClickListener {
             showTimeDialog2()
         }
-        mBinding.saveAndContinueButtonDateTime.setOnClickListener {
+        binding.saveAndContinueButtonDateTime.setOnClickListener {
             startActivity(Intent(this, LocationActivity::class.java))
         }
     }
 
+    override fun getViewBinding()= ActivityDateTime3Binding.inflate(layoutInflater)
+
     private fun showTimeDialog() {
         val timePickerDialog = TimePickerDialog(
             this,
-             { _, hourOfDay, minute ->
+            { _, hourOfDay, minute ->
                 val date = "/$hourOfDay/$minute"
-                 mBinding.tvStartTime.text = date
+                binding.tvStartTime.text = date
             },
             0,
             0,
@@ -75,7 +121,7 @@ class DateTime3Activity() : AppCompatActivity() {
             this,
             { _, hourOfDay, minute ->
                 val date = "/$hourOfDay/$minute"
-                mBinding.tvStartTime.text = date
+                binding.tvStartTime.text = date
             },
             0,
             0,
@@ -90,7 +136,7 @@ class DateTime3Activity() : AppCompatActivity() {
             this,
             { _, year, month, dayOfMonth ->
                 val date = "$year/$month/$dayOfMonth"
-                mBinding.startDateText.text = date
+                binding.startDateText.text = date
 
             },
             Calendar.getInstance()[Calendar.YEAR],
@@ -105,7 +151,7 @@ class DateTime3Activity() : AppCompatActivity() {
             this,
             { _, year, month, dayOfMonth ->
                 val date = "$year/$month/$dayOfMonth"
-                mBinding.endDate.text = date
+                binding.endDate.text = date
             },
             Calendar.getInstance()[Calendar.YEAR],
             Calendar.getInstance()[Calendar.MONTH],
@@ -113,11 +159,4 @@ class DateTime3Activity() : AppCompatActivity() {
         )
         datePickerDialog.show()
     }
-
-
 }
-
-
-
-
-
