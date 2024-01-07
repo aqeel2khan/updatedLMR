@@ -81,7 +81,7 @@
             android:name=".EventDescriptionActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.ajzoproject.BasicDetailsActivity"
+            android:name=".BasicDetailsActivity"
             android:exported="false" />
     </application>
 

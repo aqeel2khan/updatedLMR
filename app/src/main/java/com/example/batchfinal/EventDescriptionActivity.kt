@@ -8,10 +8,12 @@ import com.example.ajzoproject.DateTime3Activity
 import com.example.batchfinal.databinding.ActivityEventDescriptionBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
-import com.example.batchfinal.viewmodel.BasicDetailViewModel
+import com.example.batchfinal.viewmodel.EventDescriptionViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EventDescriptionActivity : BaseActivity<ActivityEventDescriptionBinding>() {
-    private val viewModel: BasicDetailViewModel by viewModels()
+    private val viewModel: EventDescriptionViewModel by viewModels()
 
 //    private lateinit var mBinding: ActivityEventDescriptionBinding
 //    @SuppressLint("MissingInflatedId", "SetTextI18n", "WrongViewCast")

@@ -2,11 +2,9 @@ package com.example.ajzoproject
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import com.example.batchfinal.BasicDetailsActivity
 import com.example.batchfinal.R
-import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
 import com.example.batchfinal.databinding.ActivityEjzoBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.BaseViewModel

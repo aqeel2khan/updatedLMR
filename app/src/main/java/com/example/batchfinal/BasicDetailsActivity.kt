@@ -1,11 +1,9 @@
-package com.example.ajzoproject
+package com.example.batchfinal
 
 import android.content.Intent
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
-import com.example.batchfinal.EventDescriptionActivity
-import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
@@ -101,7 +99,7 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             startActivity(Intent(this, EventDescriptionActivity::class.java))
         }
         //Todo Call API
-        viewModel.callPostEvent(JsonObject())
+       // viewModel.callPostEvent(JsonObject())
     }
 
 
