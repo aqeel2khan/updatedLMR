@@ -23,71 +23,14 @@ import com.example.batchfinal.databinding.ActivityOrganigerDetailsBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
+import com.example.batchfinal.viewmodel.OrganizerDetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
 
+@AndroidEntryPoint
 
 class OrganizerDetailsActivity : BaseActivity<ActivityOrganigerDetailsBinding>() {
-    private val viewModel: AllViewModel by viewModels()
-    private val PROFILE_IMAGE_REQ_CODE = 101
-    private val GALLERY_IMAGE_REQ_CODE = 102
-    private val CAMERA_IMAGE_REQ_CODE = 103
-
-    private lateinit var customSpinner: Spinner
-
-
-    private var mCameraUri: Uri? = null
-    private var mGalleryUri: Uri? = null
-    private var mProfileUri: Uri? = null
-
-//    @SuppressLint("CutPasteId", "SetTextI18n")
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_organiger_details)
-//
-//        mBinding = ActivityOrganigerDetailsBinding.inflate(layoutInflater)
-//        setContentView(mBinding.root)
-//
-//
-//        var rl9: LinearLayout = findViewById(R.id.profileImage)
-//
-//
-//        rl9.setOnClickListener {
-//            val bottomSheetFragment = BottomSheetFragment()
-//            bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
-//        }
-//
-//        val detailsTextView = findViewById<TextView>(R.id.detailsTextView)
-//        detailsTextView.text = "Organizer Details"
-//        mBinding.profileImageTextView.setOnClickListener {
-//            val bottomSheetFragment = BottomSheetFragment()
-//            bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
-//        }
-//        val items =
-//            arrayOf("Marriage 1", "Party 2", "Birthday  3", "Anniversary 4", "Rewards Party 5")
-//        val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
-//        mBinding.orgranizerSpinner.adapter = adapter
-//        val toolbar: Toolbar = findViewById(R.id.toolbar)
-//        setSupportActionBar(toolbar)
-//
-//        supportActionBar!!.setDisplayShowTitleEnabled(false)
-//        mBinding.saveAndContinueButtonOrganiger.setOnClickListener {
-//            startActivity(Intent(this, TicketingSeatDetailsActivity::class.java))
-//        }
-////        if (allPermissionsGranted()) {
-////            startCamera()
-////        } else {
-////            ActivityCompat.requestPermissions(
-////                this,
-////                REQUIRED_PERMISSIONS,
-////                REQUEST_CODE_PERMISSIONS
-////            )
-////        }
-//
-//        mBinding.profileImageRelativeLayout.setOnClickListener {
-//            takePhoto()
-//        }
-    // }
-
+    private val viewModel: OrganizerDetailsViewModel by viewModels()
     override fun getViewModel(): BaseViewModel {
         return viewModel
     }

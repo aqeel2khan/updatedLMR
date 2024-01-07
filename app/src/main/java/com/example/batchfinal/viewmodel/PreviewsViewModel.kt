@@ -10,7 +10,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
-class EventDescriptionViewModel @Inject constructor(
+class PreviewsViewModel @Inject constructor(
     private val userRepo: UserRepository): BaseViewModel() {
 
     // Login Api

@@ -1,3 +1,4 @@
+
 package com.example.batchfinal.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,7 +11,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
-class EventDescriptionViewModel @Inject constructor(
+class DateTimeViewModel @Inject constructor(
     private val userRepo: UserRepository): BaseViewModel() {
 
     // Login Api

@@ -17,55 +17,16 @@ import com.example.batchfinal.databinding.ActivityTickeetingSeatDetails1Binding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
+import com.example.batchfinal.viewmodel.DateTimeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
 
-
+@AndroidEntryPoint
 class DateTime3Activity() : BaseActivity<ActivityDateTime3Binding>() {
-    private val viewModel: AllViewModel by viewModels()
-//    private lateinit var mBinding: ActivityDateTime3Binding
-//    @SuppressLint("MissingInflatedId", "SetTextI18n")
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_date_time3)
-//        mBinding = ActivityDateTime3Binding.inflate(layoutInflater)
-//        setContentView(mBinding.root)
-//        val toolbar: Toolbar = findViewById(R.id.toolbar)
-//        setSupportActionBar(toolbar)
-//        val detailsTextView = findViewById<TextView>(R.id.detailsTextView)
-//        detailsTextView.text = "Date & Time"
-//
-//        supportActionBar!!.setDisplayShowTitleEnabled(false)
-//        mBinding.tvsingledayevent.setOnClickListener {
-//            mBinding.tvrecurringevent.setBackgroundResource(R.drawable.circle_shap_allo)
-//            mBinding.tvsingledayevent.setBackgroundResource(R.drawable.circel_shep_white)
-//        }
-//        mBinding.tvrecurringevent.setOnClickListener {
-//            mBinding.tvrecurringevent.setBackgroundResource(R.drawable.circel_shep_white)
-//            mBinding.tvsingledayevent.setBackgroundResource(R.drawable.circle_shap_allo)
-//        }
-//
-//        mBinding.imenddata.setOnClickListener {
-//            openCalendar2()
-//        }
-//        mBinding.imdateicon.setOnClickListener {
-//            openCalendar()
-//        }
-//        mBinding.ivStartTime.setOnClickListener {
-//            showTimeDialog()
-//
-//        }
-//        mBinding.imendtimeicon.setOnClickListener {
-//            showTimeDialog2()
-//        }
-//        mBinding.saveAndContinueButtonDateTime.setOnClickListener {
-//            startActivity(Intent(this, LocationActivity::class.java))
-//        }
-    // }
-
+    private val viewModel: DateTimeViewModel by viewModels()
     override fun getViewModel(): BaseViewModel {
         return  viewModel
     }
-
     override fun initUi() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
