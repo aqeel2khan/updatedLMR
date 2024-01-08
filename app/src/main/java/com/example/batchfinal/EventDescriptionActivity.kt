@@ -15,24 +15,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class EventDescriptionActivity : BaseActivity<ActivityEventDescriptionBinding>() {
     private val viewModel: EventDescriptionViewModel by viewModels()
 
-//    private lateinit var mBinding: ActivityEventDescriptionBinding
-//    @SuppressLint("MissingInflatedId", "SetTextI18n", "WrongViewCast")
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_event_description)
-//        mBinding = ActivityEventDescriptionBinding.inflate(layoutInflater)
-//        setContentView(mBinding.root)
-//        val toolbar: Toolbar = findViewById(R.id.toolbar)
-//        setSupportActionBar(toolbar)
-//
-//        supportActionBar!!.setDisplayShowTitleEnabled(false)
-//        mBinding.saveAndContinueButton.setOnClickListener {
-//            startActivity(Intent(this,DateTime3Activity::class.java))
-//        }
-//        val detailsTextView = findViewById<TextView>(R.id.detailsTextView)
-//        detailsTextView.text = "More Details"
-//    }
-
     override fun getViewModel(): BaseViewModel {
         return  viewModel
     }

@@ -17,55 +17,14 @@ import com.example.batchfinal.databinding.ActivityTicketingSeatBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
+import com.example.batchfinal.viewmodel.TicketingSeatDetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
+@AndroidEntryPoint
 
 @Suppress("UNREACHABLE_CODE")
 class TicketingSeatDetailsActivity : BaseActivity<ActivityTickeetingSeatDetails1Binding>() {
-    private val viewModel: AllViewModel by viewModels()
-//    private lateinit var mBinding: ActivityTickeetingSeatDetails1Binding
-
-//    @SuppressLint("SuspiciousIndentation", "MissingInflatedId", "SetTextI18n")
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_tickeeting_seat_details1)
-//        mBinding = ActivityTickeetingSeatDetails1Binding.inflate(layoutInflater)
-//        setContentView(mBinding.root)
-//        val toolbar: Toolbar = findViewById(R.id.toolbar)
-//        setSupportActionBar(toolbar)
-//        supportActionBar!!.setDisplayShowTitleEnabled(false)
-//
-//        val detailsTextView = findViewById<TextView>(R.id.detailsTextView)
-//        detailsTextView.text = "Ticketing/Seating"
-//        mBinding.tvFreeText.setOnClickListener {
-//            mBinding.tvFreeText.setBackgroundResource(R.drawable.circel_shep_white)
-//            mBinding.tvPaidText.setBackgroundResource(R.drawable.circle_shap_allo)
-//        }
-//        mBinding.tvPaidText.setOnClickListener {
-//            mBinding.tvFreeText.setBackgroundResource(R.drawable.circle_shap_allo)
-//            mBinding.tvPaidText.setBackgroundResource(R.drawable.circel_shep_white)
-//        }
-//
-//        mBinding.ticketsSalesStartDateRelative.setOnClickListener {
-//            openCalendar2()
-//        }
-//
-//        mBinding.startTimeSeat.setOnClickListener {
-//            showTimeDialog3()
-//        }
-//        mBinding.endDateLableRelative.setOnClickListener {
-//            openCalendar3()
-//        }
-//        mBinding.endTimeLableRelative.setOnClickListener {
-//            showTimeDialog4()
-//        }
-//        mBinding.saveAndContinueButtonSeat.setOnClickListener {
-//            startActivity(Intent(this, TicketingSeatActivity::class.java))
-////            val checkStatus = validation()
-////            if (checkStatus) {
-////            }
-//        }
-//    }
-
+    private val viewModel: TicketingSeatDetailsViewModel by viewModels()
     private fun openCalendar2() {
         val datePickerDialog = DatePickerDialog(
             this,

@@ -16,7 +16,6 @@ import javax.inject.Inject
 class AllViewModel @Inject constructor(
     private val userRepo: UserRepository
 ): BaseViewModel() {
-
     // Login Api
     var _loginResponse: MutableLiveData<NetworkErrorResult<LoginResponseModel>> = MutableLiveData()
     var loginResponse: LiveData<NetworkErrorResult<LoginResponseModel>> = _loginResponse

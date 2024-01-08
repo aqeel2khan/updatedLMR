@@ -18,17 +18,14 @@ class BasicDetailViewModel @Inject constructor(
 
     // Login Api
     var _loginResponse: MutableLiveData<NetworkErrorResult<LoginResponseModel>> = MutableLiveData()
-
     // Create Event Model Response
     val loginResponse: LiveData<NetworkErrorResult<LoginResponseModel>>
         get() = _loginResponse
-
     fun loginApiCall(jsonObject: JsonObject) = viewModelScope.launch {
         userRepo.loginApi(jsonObject).collect { values ->
             _loginResponse.value = values
         }
     }
-
     fun callPostEvent(jsonObject: JsonObject) = viewModelScope.launch {
         userRepo.loginApi(jsonObject)
     }
