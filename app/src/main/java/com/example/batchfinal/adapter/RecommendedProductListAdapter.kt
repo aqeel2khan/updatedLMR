@@ -4,9 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.batchfinal.R
-import com.example.batchfinal.databinding.ItemListMotivatorBinding
 import com.example.batchfinal.databinding.ItemListRecomdProductBinding
 import com.example.batchfinal.`interface`.PositionItemClickListener
 import java.util.ArrayList

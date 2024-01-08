@@ -1,10 +1,10 @@
-package com.example.batchfinal
+package com.example.batchfinal.view.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
-import com.example.ajzoproject.DateTime3Activity
+import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityEventDescriptionBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.BaseViewModel

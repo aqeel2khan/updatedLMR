@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".App"
+        android:name="com.example.batchfinal.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -25,7 +25,7 @@
 <!--            android:name=".view.activity.MotivatorDetailActivity"-->
 <!--            android:exported="false" />-->
         <activity
-            android:name="com.example.ajzoproject.EjzoActivity"
+            android:name="com.example.batchfinal.view.activity.EjzoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,10 +51,10 @@
 
 
         <activity
-            android:name="com.example.ajzoproject.EventActivity"
+            android:name="com.example.batchfinal.view.activity.EventActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.ajzoproject.PreviewsActivity"
+            android:name="com.example.batchfinal.view.activity.PreviewsActivity"
             android:exported="false" />
         <activity
             android:name="com.example.ajzoproject.dashboard.DashboardActivity"
@@ -63,25 +63,25 @@
 <!--            android:name=""-->
 <!--            android:exported="false" />-->
         <activity
-            android:name="com.example.ajzoproject.TicketingSeatDetailsActivity"
+            android:name="com.example.batchfinal.view.activity.TicketingSeatDetailsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.ajzoproject.OrganizerDetailsActivity"
+            android:name="com.example.batchfinal.view.activity.OrganizerDetailsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.ajzoproject.LocationActivity"
+            android:name="com.example.batchfinal.view.activity.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.ajzoproject.TicketingSeatActivity"
+            android:name="com.example.batchfinal.view.activity.TicketingSeatActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.ajzoproject.DateTime3Activity"
+            android:name="com.example.batchfinal.view.activity.DateTime3Activity"
             android:exported="false" />
         <activity
-            android:name=".EventDescriptionActivity"
+            android:name="com.example.batchfinal.view.activity.EventDescriptionActivity"
             android:exported="false" />
         <activity
-            android:name=".BasicDetailsActivity"
+            android:name="com.example.batchfinal.view.activity.BasicDetailsActivity"
             android:exported="false" />
     </application>
 

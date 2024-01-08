@@ -1,17 +1,12 @@
 package com.example.batchfinal.view.activity
 
-import android.content.Intent
-import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.activity.viewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.batchfinal.R
-import com.example.batchfinal.adapter.RecommendedProductListAdapter
-import com.example.batchfinal.adapter.WorkoutTypeAdapter
 import com.example.batchfinal.databinding.ActivityWeightLossBinding
-import com.example.batchfinal.`interface`.PositionItemClickListener
+import com.example.batchfinal.R
+import com.example.batchfinal.adapter.WorkoutTypeAdapter
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
@@ -43,7 +38,6 @@ class WeightLossActivity : BaseActivity<ActivityWeightLossBinding>() {
             finish()
         }
         binding.btnSubscribe.setOnClickListener {
-            startActivity(Intent(this@WeightLossActivity, BuySubscriptionActivity::class.java))
         }
     }
 

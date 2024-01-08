@@ -1,20 +1,14 @@
-package com.example.ajzoproject
+package com.example.batchfinal.view.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.viewModels
-import androidx.appcompat.widget.AppCompatButton
 import com.example.batchfinal.R
-import com.example.batchfinal.databinding.ActivityPreviewsBinding
-
 import com.example.batchfinal.databinding.ActivityTicketingSeatBinding
 import com.example.batchfinal.view.BaseActivity
-import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
 import com.example.batchfinal.viewmodel.TicketingSeatViewModel
 import dagger.hilt.android.AndroidEntryPoint

@@ -1,34 +1,21 @@
-package com.example.ajzoproject
+package com.example.batchfinal.view.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.net.Uri
-import android.os.Bundle
-import android.os.Environment
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
-import android.widget.Spinner
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.batchfinal.R
-import com.example.batchfinal.databinding.ActivityMainBinding
 
 import com.example.batchfinal.databinding.ActivityOrganigerDetailsBinding
 import com.example.batchfinal.view.BaseActivity
-import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
 import com.example.batchfinal.viewmodel.OrganizerDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import java.io.File
 
 @AndroidEntryPoint
-
 class OrganizerDetailsActivity : BaseActivity<ActivityOrganigerDetailsBinding>() {
     private val viewModel: OrganizerDetailsViewModel by viewModels()
     override fun getViewModel(): BaseViewModel {
@@ -37,11 +24,7 @@ class OrganizerDetailsActivity : BaseActivity<ActivityOrganigerDetailsBinding>()
 
     @SuppressLint("SetTextI18n")
     override fun initUi() {
-        val rl9: LinearLayout = findViewById(R.id.profileImage)
-        rl9.setOnClickListener {
-            val bottomSheetFragment = BottomSheetFragment()
-            bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
-        }
+
         val detailsTextView = findViewById<TextView>(R.id.detailsTextView)
         detailsTextView.text = "Organizer Details"
         binding.profileImageTextView.setOnClickListener {

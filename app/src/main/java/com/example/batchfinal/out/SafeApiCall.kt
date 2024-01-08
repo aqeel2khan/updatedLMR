@@ -1,5 +1,6 @@
 package net.simplifiedcoding.data.network
 
+import android.annotation.SuppressLint
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -7,6 +8,7 @@ import org.json.JSONObject
 import retrofit2.HttpException
 
 interface SafeApiCall {
+    @SuppressLint("LogNotTimber")
     suspend fun <T> safeApiCall(apiCall: suspend () -> T): Resource<T> {
         return withContext(Dispatchers.IO) {
             try {
@@ -17,7 +19,7 @@ interface SafeApiCall {
                         try {
                             val jObjError = JSONObject(throwable.response()!!.errorBody()!!.string())
                             Log.d("quran  error response", "" + jObjError)
-                            Resource.Failure("", 0, "${jObjError}")
+                            Resource.Failure("", 0, "$jObjError")
                         } catch (e: Exception) {
                             Resource.Failure("", 0, "")
                         }

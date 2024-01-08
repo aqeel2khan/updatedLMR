@@ -3,11 +3,10 @@ package com.example.batchfinal.view.fragment
 import android.content.Intent
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.batchfinal.adapter.AllBatchesAdapter
 import com.example.batchfinal.databinding.FragmentBatchesBinding
+import com.example.batchfinal.adapter.AllBatchesAdapter
 import com.example.batchfinal.`interface`.PositionItemClickListener
 import com.example.batchfinal.view.BaseFragment
-import com.example.batchfinal.view.activity.WeightLossActivity
 import com.example.batchfinal.view.activity.WeightLossBatchActivity
 import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel

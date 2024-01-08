@@ -1,12 +1,9 @@
 package com.example.batchfinal.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.batchfinal.adapter.BatchWorkoutTypeAdapter
-import com.example.batchfinal.adapter.WorkoutTypeAdapter
 import com.example.batchfinal.databinding.ActivityWeightLossBatchBinding
+import com.example.batchfinal.adapter.BatchWorkoutTypeAdapter
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel

@@ -1,12 +1,6 @@
 package com.example.batchfinal.view.fragment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.batchfinal.R
 import com.example.batchfinal.databinding.FragmentHomeBinding
 import com.example.batchfinal.view.BaseFragment
 import com.example.batchfinal.viewmodel.AllViewModel

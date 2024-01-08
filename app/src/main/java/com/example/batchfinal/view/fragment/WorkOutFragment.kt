@@ -1,19 +1,12 @@
 package com.example.batchfinal.view.fragment
 
-import android.graphics.Color
-import android.view.View
-import android.widget.FrameLayout
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import com.example.batchfinal.R
-import com.example.batchfinal.adapter.AllBatchesAdapter
-import com.example.batchfinal.adapter.TabFragmentAdapter
 import com.example.batchfinal.databinding.FragmentWorkOutBinding
+import com.example.batchfinal.adapter.TabFragmentAdapter
 import com.example.batchfinal.view.BaseFragment
 import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
-import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -33,9 +26,9 @@ class WorkOutFragment : BaseFragment<FragmentWorkOutBinding>() {
     }
 
     private fun setUpTablayoutWithViewPager() {
-        adapterViewPager = TabFragmentAdapter(activity!!.supportFragmentManager)
-        adapterViewPager!!.addFragment(BatchesFragment(), activity!!.resources.getString(R.string.txt_batch))
-        adapterViewPager!!.addFragment(MotivationsFragment(), activity!!.resources.getString(R.string.txt_motivations))
+        adapterViewPager = TabFragmentAdapter(requireActivity().supportFragmentManager)
+        adapterViewPager!!.addFragment(BatchesFragment(), requireActivity().resources.getString(R.string.txt_batch))
+        adapterViewPager!!.addFragment(MotivationsFragment(), requireActivity().resources.getString(R.string.txt_motivations))
         binding.viewPager.adapter = adapterViewPager
         binding.tabLayout.setupWithViewPager(binding.viewPager)
     }

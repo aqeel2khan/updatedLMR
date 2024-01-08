@@ -1,8 +1,5 @@
 package com.example.batchfinal.utils
 
-import java.text.SimpleDateFormat
-import java.util.*
-
 object MyConstant {
     const val BASE_URL = "https://skazulebackend.chawtechsolutions.ch/api/"
     const val IMAGE_BASE_URL = "https://skazulebackend.chawtechsolutions.ch/storage/app/"

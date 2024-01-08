@@ -1,5 +1,4 @@
 package com.example.batchfinal.viewmodel
-
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -12,19 +11,20 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AllViewModel @Inject constructor(
+class EjzoViewModel @Inject constructor(
     private val userRepo: UserRepository
-): BaseViewModel() {
-    // Login Api
+) : BaseViewModel() {
+
     var _loginResponse: MutableLiveData<NetworkErrorResult<LoginResponseModel>> = MutableLiveData()
-    var loginResponse: LiveData<NetworkErrorResult<LoginResponseModel>> = _loginResponse
+    val loginResponse: LiveData<NetworkErrorResult<LoginResponseModel>>
         get() = _loginResponse
 
     fun loginApiCall(jsonObject: JsonObject) = viewModelScope.launch {
         userRepo.loginApi(jsonObject).collect { values ->
             _loginResponse.value = values
-
         }
     }
-
+    fun callPostEvent(jsonObject: JsonObject) = viewModelScope.launch {
+        userRepo.loginApi(jsonObject)
+    }
 }

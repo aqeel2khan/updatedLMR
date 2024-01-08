@@ -1,16 +1,14 @@
 package com.example.batchfinal.view
 
 import android.app.Dialog
-import android.media.AudioManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.example.batchfinal.MainActivity
+import com.example.batchfinal.view.activity.MainActivity
 import com.example.batchfinal.utils.AppSharedPreferences
 import com.example.batchfinal.viewmodel.BaseViewModel
 import javax.inject.Inject

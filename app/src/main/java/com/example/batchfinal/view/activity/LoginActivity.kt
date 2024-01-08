@@ -1,16 +1,8 @@
 package com.example.batchfinal.view.activity
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.drawable.GradientDrawable
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.batchfinal.R
 import com.example.batchfinal.custom.CustomToast.Companion.showToast
