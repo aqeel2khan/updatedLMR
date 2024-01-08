@@ -212,6 +212,7 @@
                             android:id="@+id/publicEvent"
                             android:layout_width="wrap_content"
                             android:buttonTint="#092C9F"
+
                             android:layout_height="wrap_content" />
 
                         <LinearLayout

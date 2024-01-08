@@ -1,6 +1,9 @@
 package com.example.batchfinal
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
@@ -13,6 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
+    private var position_spinner1: Int=0
     private val viewModel: BasicDetailViewModel by viewModels()
 
 
@@ -28,6 +32,7 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
     private var isPublicEvent = true
     private var isFreeEvent = true
     private var isPaidEvent = true
+    @SuppressLint("SuspiciousIndentation")
     override fun initUi() {
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -35,20 +40,28 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
         binding.publicEvent.setOnClickListener {
-            isPrivateEvent = !isPrivateEvent
-            binding.publicEvent.isChecked = isPrivateEvent
+            isPrivateEvent = false
+            isPublicEvent = true
+            binding.publicEvent.isChecked = isPublicEvent
+            binding.privateEvent.isChecked = isPrivateEvent
         }
 
         binding.privateEvent.setOnClickListener {
-            isPublicEvent = !isPublicEvent
-            binding.privateEvent.isChecked = isPublicEvent
+            isPrivateEvent = true
+            isPublicEvent = false
+            binding.privateEvent.isChecked = isPrivateEvent
+            binding.publicEvent.isChecked = isPublicEvent
         }
         binding.freeEvent.setOnClickListener {
-            isFreeEvent = !isFreeEvent
+            isFreeEvent = true
+            isPaidEvent = false
             binding.freeEvent.isChecked = isFreeEvent
+            binding.paidEvent.isChecked = isPaidEvent
         }
         binding.paidEvent.setOnClickListener {
-            isPaidEvent = !isPaidEvent
+            isPaidEvent = true
+            isFreeEvent = false
+            binding.paidEvent.isChecked = isPaidEvent
             binding.paidEvent.isChecked = isPaidEvent
         }
 
@@ -58,6 +71,18 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
         customSpinnerAgeGroup();
 
         binding.saveAndContinueButtonBasic.setOnClickListener {
+
+         var eventName=   binding.eventEditText.text.toString()
+
+            isPublicEvent
+            isPrivateEvent
+            isPaidEvent
+            isFreeEvent
+            position_spinner1
+
+
+
+
             startActivity(Intent(this, EventDescriptionActivity::class.java))
         }
         //Todo Call API
@@ -70,6 +95,18 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             arrayOf("Marriage 1", "Party 2", "Birthday  3", "Anniversary 4", "Rewards Party 5")
         val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
         binding.customSpinner1.adapter = adapter
+
+        binding.customSpinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+              var  selectedText = items[position]
+                position_spinner1= position
+                
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+
+            }
+        }
     }
 
     private fun customSpinnerChooseEventCategory() {

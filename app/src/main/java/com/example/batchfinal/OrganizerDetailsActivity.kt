@@ -22,7 +22,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
 
 @AndroidEntryPoint
-
 class OrganizerDetailsActivity : BaseActivity<ActivityOrganigerDetailsBinding>() {
     private val viewModel: OrganizerDetailsViewModel by viewModels()
     override fun getViewModel(): BaseViewModel {
