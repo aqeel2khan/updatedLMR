@@ -1,15 +1,13 @@
-package com.example.batchfinal
+package com.example.batchfinal.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.PopupMenu
 import androidx.activity.viewModels
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityMainBinding
 import com.example.batchfinal.utils.makeGone
 import com.example.batchfinal.utils.makeVisible

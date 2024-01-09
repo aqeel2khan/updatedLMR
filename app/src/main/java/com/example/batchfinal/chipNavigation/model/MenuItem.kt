@@ -2,7 +2,6 @@ package com.example.batchfinal.chipNavigation.model
 
 import android.graphics.PorterDuff
 import androidx.annotation.ColorInt
-import androidx.annotation.DimenRes
 import androidx.annotation.DrawableRes
 
 internal class MenuItem(

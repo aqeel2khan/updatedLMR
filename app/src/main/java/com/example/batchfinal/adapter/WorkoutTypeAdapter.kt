@@ -4,10 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.batchfinal.databinding.ItemWorkoutBatchBinding
 import com.example.batchfinal.databinding.ItemWorkoutTypeBinding
-import com.example.batchfinal.`interface`.PositionItemClickListener
-import java.util.ArrayList
+//import com.example.lmr.databinding.ItemWorkoutTypeBinding
 
 
 class WorkoutTypeAdapter(val context: Context?) : RecyclerView.Adapter<WorkoutTypeAdapter.ViewHolder>(){

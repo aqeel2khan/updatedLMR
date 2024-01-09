@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    tools:context=".view.activity.BasicDetailsActivity">
 
     <RelativeLayout
         android:id="@+id/rl1"
@@ -212,7 +212,6 @@
                             android:id="@+id/publicEvent"
                             android:layout_width="wrap_content"
                             android:buttonTint="#092C9F"
-
                             android:layout_height="wrap_content" />
 
                         <LinearLayout
@@ -319,6 +318,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
                         android:orientation="horizontal">
 
                         <RadioButton
@@ -330,7 +330,7 @@
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical">
 
                             <TextView

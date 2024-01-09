@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.batchfinal.R
 
+//import com.example.lmr.R
+
 /**
  * Dialog to View Image
  * @author Dhaval Patel

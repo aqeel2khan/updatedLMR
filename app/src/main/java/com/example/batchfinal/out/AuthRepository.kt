@@ -10,9 +10,9 @@ class AuthRepository @Inject constructor(
 ) : BaseRepository(api) {
 
     suspend fun loginApi(jsonObject: JsonObject)= safeApiCall {
-        api.loginApi(jsonObject)
+        api.verifyOTPApi(jsonObject)
     }
     suspend fun registerApi(jsonObject: JsonObject)= safeApiCall {
-        api.loginApi(jsonObject)
+        api.verifyOTPApi(jsonObject)
     }
 }

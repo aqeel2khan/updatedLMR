@@ -9,7 +9,6 @@ import com.example.batchfinal.utils.NetworkErrorResult
 import com.google.gson.JsonObject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import okhttp3.RequestBody
 import javax.inject.Inject
 
 @HiltViewModel

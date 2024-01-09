@@ -3,9 +3,9 @@ package com.example.batchfinal.view.fragment
 import android.content.Intent
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.batchfinal.databinding.FragmentMotivationsBinding
 import com.example.batchfinal.R
 import com.example.batchfinal.adapter.MotivatorListAdapter
-import com.example.batchfinal.databinding.FragmentMotivationsBinding
 import com.example.batchfinal.`interface`.PositionItemClickListener
 import com.example.batchfinal.view.BaseFragment
 import com.example.batchfinal.view.activity.MotivatorDetailActivity

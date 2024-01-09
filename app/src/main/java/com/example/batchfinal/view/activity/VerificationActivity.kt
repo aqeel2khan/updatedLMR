@@ -1,12 +1,7 @@
 package com.example.batchfinal.view.activity
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.Button
 import androidx.activity.viewModels
-import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityVerificationBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.AllViewModel

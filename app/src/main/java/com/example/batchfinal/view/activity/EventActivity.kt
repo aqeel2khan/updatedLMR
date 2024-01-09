@@ -1,4 +1,4 @@
-package com.example.ajzoproject
+package com.example.batchfinal.view.activity
 
 import androidx.activity.viewModels
 import com.example.batchfinal.databinding.ActivityEventBinding

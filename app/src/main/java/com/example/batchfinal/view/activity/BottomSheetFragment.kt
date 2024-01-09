@@ -1,9 +1,7 @@
-package com.example.ajzoproject
+package com.example.batchfinal.view.activity
 import android.app.Dialog
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.example.batchfinal.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior

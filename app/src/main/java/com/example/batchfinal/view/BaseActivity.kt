@@ -1,17 +1,13 @@
 package com.example.batchfinal.view
 
-import android.Manifest
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.content.getSystemService
 import androidx.viewbinding.ViewBinding
 import com.example.batchfinal.utils.AppSharedPreferences
 import com.example.batchfinal.viewmodel.BaseViewModel
 import kotlinx.coroutines.InternalCoroutinesApi
-import java.util.*
 import javax.inject.Inject
 
 abstract  class BaseActivity<B : ViewBinding> : AppCompatActivity() {

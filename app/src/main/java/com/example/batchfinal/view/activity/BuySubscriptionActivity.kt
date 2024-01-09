@@ -1,7 +1,5 @@
 package com.example.batchfinal.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.batchfinal.databinding.ActivityBuySubscriptionBinding
 import com.example.batchfinal.view.BaseActivity

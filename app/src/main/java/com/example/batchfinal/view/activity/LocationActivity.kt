@@ -1,4 +1,4 @@
-package com.example.ajzoproject
+package com.example.batchfinal.view.activity
 
 import android.content.Intent
 import android.widget.TextView
@@ -9,7 +9,6 @@ import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityLocationBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
-import com.example.batchfinal.viewmodel.BasicDetailViewModel
 import com.example.batchfinal.viewmodel.LocationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

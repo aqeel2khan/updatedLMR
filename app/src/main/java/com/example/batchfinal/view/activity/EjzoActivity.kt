@@ -1,19 +1,18 @@
-package com.example.ajzoproject
+package com.example.batchfinal.view.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.activity.viewModels
-import com.example.batchfinal.BasicDetailsActivity
 import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityEjzoBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
-import com.example.batchfinal.viewmodel.BasicDetailViewModel
+import com.example.batchfinal.viewmodel.EjzoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class EjzoActivity : BaseActivity<ActivityEjzoBinding>() {
-    private val viewModel: BasicDetailViewModel by viewModels()
+    private val viewModel: EjzoViewModel by viewModels()
     override fun getViewModel(): BaseViewModel {
         return viewModel
     }

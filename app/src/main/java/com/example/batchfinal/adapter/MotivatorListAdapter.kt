@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ItemListMotivatorBinding
+//import com.example.lmr.R
+//import com.example.lmr.databinding.ItemListMotivatorBinding
 import com.example.batchfinal.`interface`.PositionItemClickListener
 import java.util.ArrayList
 

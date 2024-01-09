@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.batchfinal.databinding.ItemAllBatchesBinding
 import com.example.batchfinal.`interface`.PositionItemClickListener
-import dagger.hilt.android.AndroidEntryPoint
 import java.util.ArrayList
 
 class AllBatchesAdapter(val context: Context?, var name: ArrayList<String>, var listener: PositionItemClickListener<Int>) : RecyclerView.Adapter<AllBatchesAdapter.ViewHolder>(){

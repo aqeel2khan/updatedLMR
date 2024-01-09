@@ -1,21 +1,14 @@
-package com.example.ajzoproject
+package com.example.batchfinal.view.activity
 
-import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
-import android.os.Bundle
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityDateTime3Binding
-import com.example.batchfinal.databinding.ActivityTickeetingSeatDetails1Binding
 import com.example.batchfinal.view.BaseActivity
-import com.example.batchfinal.viewmodel.AllViewModel
 import com.example.batchfinal.viewmodel.BaseViewModel
 import com.example.batchfinal.viewmodel.DateTimeViewModel
 import dagger.hilt.android.AndroidEntryPoint

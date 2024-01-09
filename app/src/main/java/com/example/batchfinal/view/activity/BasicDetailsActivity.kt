@@ -1,4 +1,4 @@
-package com.example.batchfinal
+package com.example.batchfinal.view.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,6 +7,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
+import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
@@ -22,23 +23,16 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
     private var position_spinneer4:Int=0
 
     private val viewModel: BasicDetailViewModel by viewModels()
-
-
-
     override fun getViewModel(): BaseViewModel {
         return viewModel
-
     }
-
     override fun getViewBinding() = ActivityBasicDetailsBinding.inflate(layoutInflater)
-
     private var isPrivateEvent = true
     private var isPublicEvent = true
     private var isFreeEvent = true
     private var isPaidEvent = true
     @SuppressLint("SuspiciousIndentation")
     override fun initUi() {
-
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayShowTitleEnabled(false)
@@ -49,7 +43,6 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             binding.publicEvent.isChecked = isPublicEvent
             binding.privateEvent.isChecked = isPrivateEvent
         }
-
         binding.privateEvent.setOnClickListener {
             isPrivateEvent = true
             isPublicEvent = false
@@ -68,12 +61,10 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             binding.paidEvent.isChecked = isPaidEvent
             binding.paidEvent.isChecked = isPaidEvent
         }
-
         customSpinnerChooseEventCategory();
         customSpinnerEvent();
         customSpinnerTotalMaximumCapacity();
         customSpinnerAgeGroup();
-
         binding.saveAndContinueButtonBasic.setOnClickListener {
 
          var eventName=   binding.eventEditText.text.toString()
@@ -94,10 +85,8 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             startActivity(Intent(this, EventDescriptionActivity::class.java))
         }
         //Todo Call API
-       // viewModel.callPostEvent(JsonObject())
+        viewModel.callPostEvent(JsonObject())
     }
-
-
     private fun customSpinnerEvent() {
         val items =
             arrayOf("Marriage 1", "Party 2", "Birthday  3", "Anniversary 4", "Rewards Party 5")
@@ -116,7 +105,6 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             }
         }
     }
-
     private fun customSpinnerChooseEventCategory() {
         val items =
             arrayOf("Dawat Waleema1", "Reception ", "Price Reward", "Annual Party", "Eid Party")
@@ -135,7 +123,6 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             }
         }
     }
-
     private fun customSpinnerTotalMaximumCapacity() {
         val items = arrayOf("100-200", "200-300 ", "300-400", "400-500")
         val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
@@ -154,8 +141,6 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             }
         }
     }
-
-
     private fun customSpinnerAgeGroup() {
         val items = arrayOf("18", "19 ", "20", "21")
         val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
@@ -173,6 +158,4 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             }
         }
     }
-
-
 }

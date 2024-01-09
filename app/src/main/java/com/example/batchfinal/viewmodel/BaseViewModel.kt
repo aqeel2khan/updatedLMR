@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.batchfinal.factory.IFactory
 import com.example.batchfinal.model.RequestType
 import com.example.batchfinal.network.errorhandling.ErrorHandler
-import dagger.Provides
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,7 +14,6 @@ import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import timber.log.Timber
 import java.net.SocketTimeoutException
-import javax.inject.Inject
 
 open class BaseViewModel(): ViewModel() {
 
