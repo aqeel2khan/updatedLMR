@@ -17,6 +17,10 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
     private var position_spinner1: Int=0
+    private var position_spinner2: Int=0
+    private var position_spinneer3:Int=0
+    private var position_spinneer4:Int=0
+
     private val viewModel: BasicDetailViewModel by viewModels()
 
 
@@ -74,11 +78,15 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
 
          var eventName=   binding.eventEditText.text.toString()
 
+
             isPublicEvent
             isPrivateEvent
             isPaidEvent
             isFreeEvent
             position_spinner1
+            position_spinner2
+            position_spinneer3
+            position_spinneer4
 
 
 
@@ -114,12 +122,37 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             arrayOf("Dawat Waleema1", "Reception ", "Price Reward", "Annual Party", "Eid Party")
         val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
         binding.customSpinner2.adapter = adapter
+
+        binding.customSpinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                var  selectedText = items[position]
+                position_spinner2= position
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+
+            }
+        }
     }
 
     private fun customSpinnerTotalMaximumCapacity() {
         val items = arrayOf("100-200", "200-300 ", "300-400", "400-500")
         val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
         binding.customSpinner3.adapter = adapter
+
+
+        binding.customSpinner3.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                var  selectedText = items[position]
+                position_spinneer3= position
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+
+            }
+        }
     }
 
 
@@ -127,6 +160,18 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
         val items = arrayOf("18", "19 ", "20", "21")
         val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
         binding.customSpinner4.adapter = adapter
+
+        binding.customSpinner4.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                var  selectedText = items[position]
+                position_spinneer4 = position
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+
+            }
+        }
     }
 
 
