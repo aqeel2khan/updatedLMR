@@ -57,6 +57,4 @@ interface ApiService {
 
     @GET("/api/Country")
     suspend fun countryApi(@Body jsonObject: JsonObject): LoginResponseModel
-
-
 }

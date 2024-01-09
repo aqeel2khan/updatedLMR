@@ -72,6 +72,7 @@ data class EventDateTimeRequest(
     @field:SerializedName("eventOccurType")
     val eventOccurType: String? = null,
 )
+
 data class EventDateAndTimeDetailsRequest(
     @SerializedName("eventDateAndTimeDetailsID")
     val eventDateAndTimeDetailsID: Int? = null,

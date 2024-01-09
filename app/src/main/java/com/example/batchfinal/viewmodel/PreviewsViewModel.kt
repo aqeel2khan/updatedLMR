@@ -3,6 +3,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.batchfinal.model.LoginResponseModel
+import com.example.batchfinal.repository.PreviewsRepository
 import com.example.batchfinal.repository.UserRepository
 import com.example.batchfinal.utils.NetworkErrorResult
 import com.google.gson.JsonObject
@@ -11,7 +12,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
 class PreviewsViewModel @Inject constructor(
-    private val userRepo: UserRepository): BaseViewModel() {
+    private val userRepo: PreviewsRepository
+): BaseViewModel() {
 
     // Login Api
     var _loginResponse: MutableLiveData<NetworkErrorResult<LoginResponseModel>> = MutableLiveData()
