@@ -50,6 +50,9 @@ class DateTime3Activity() : BaseActivity<ActivityDateTime3Binding>() {
             showTimeDialog2()
         }
         binding.saveAndContinueButtonDateTime.setOnClickListener {
+
+            // find value here
+
             startActivity(Intent(this, LocationActivity::class.java))
         }
     }

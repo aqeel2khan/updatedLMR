@@ -4,7 +4,6 @@ import android.content.Intent
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
-import com.example.batchfinal.OrganizerDetailsActivity
 import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityLocationBinding
 import com.example.batchfinal.view.BaseActivity

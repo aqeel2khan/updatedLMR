@@ -26,6 +26,10 @@ class EventDescriptionActivity : BaseActivity<ActivityEventDescriptionBinding>()
 
         supportActionBar!!.setDisplayShowTitleEnabled(false)
         binding.saveAndContinueButton.setOnClickListener {
+
+            // get type value from edittext
+
+
             startActivity(Intent(this, DateTime3Activity::class.java))
         }
         val detailsTextView = findViewById<TextView>(R.id.detailsTextView)

@@ -18,7 +18,7 @@ data class EventsModel(
     val eventID: Int? = null,
 
     @field:SerializedName("eventName")
-    val eventName: String? = null,
+    var eventName: String? = null,
 
     @field:SerializedName("eventTypeID")
     val eventTypeID: Int? = null,
@@ -27,13 +27,13 @@ data class EventsModel(
     val eventCategoryID: Int? = null,
 
     @field:SerializedName("numberOfPeople")
-    val numberOfPeople: Int? = null,
+    var numberOfPeople: Int? = null,
 
     @field:SerializedName("maximumCapacity")
     val maximumCapacity: Int? = null,
 
     @field:SerializedName("publishingMethod")
-    val publishingMethod: Int? = null,
+    var publishingMethod: Int? = null,
 
     @field:SerializedName("ticketType")
     val ticketType: Int? = null,

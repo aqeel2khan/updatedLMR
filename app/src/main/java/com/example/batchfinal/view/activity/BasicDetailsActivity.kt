@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
 import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
+import com.example.batchfinal.model.request.EventsModel
 import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
 import com.example.batchfinal.viewmodel.BasicDetailViewModel
@@ -78,6 +79,18 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
             position_spinner2
             position_spinneer3
             position_spinneer4
+
+
+         var postDeatil=   EventsModel()
+            postDeatil.eventName = eventName
+            postDeatil.numberOfPeople = 100
+
+            if(isPaidEvent){
+                postDeatil.publishingMethod= 1
+            }else{
+                postDeatil.publishingMethod= 0
+            }
+
 
 
 
