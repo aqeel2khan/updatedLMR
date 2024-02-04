@@ -1,19 +1,19 @@
-package com.example.batchfinal.view.activity
+package com.example.batchfinal.view.fragment
 
 import android.content.Intent
 import android.widget.ArrayAdapter
-import androidx.activity.viewModels
-import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.viewModels
 import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
-import com.example.batchfinal.view.BaseActivity
+import com.example.batchfinal.view.BaseFragment
+import com.example.batchfinal.view.activity.EventDescriptionActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
 import com.example.batchfinal.viewmodel.BasicDetailViewModel
 import com.google.gson.JsonObject
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
+class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
     private val viewModel: BasicDetailViewModel by viewModels()
     override fun getViewModel(): BaseViewModel {
         return viewModel
@@ -24,9 +24,9 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
     private var isFreeEvent = true
     private var isPaidEvent = true
     override fun initUi() {
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar!!.setDisplayShowTitleEnabled(false)
+//        val toolbar: Toolbar = findViewById(R.id.toolbar)
+//        setSupportActionBar(toolbar)
+//        supportActionBar!!.setDisplayShowTitleEnabled(false)
 
         binding.publicEvent.setOnClickListener {
             isPrivateEvent = !isPrivateEvent
@@ -49,7 +49,7 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
         customSpinnerTotalMaximumCapacity();
         customSpinnerAgeGroup();
         binding.saveAndContinueButtonBasic.setOnClickListener {
-            startActivity(Intent(this, EventDescriptionActivity::class.java))
+            startActivity(Intent(requireActivity(), EventDescriptionActivity::class.java))
         }
         //Todo Call API
         viewModel.callPostEvent(JsonObject())
@@ -57,23 +57,23 @@ class BasicDetailsActivity : BaseActivity<ActivityBasicDetailsBinding>() {
     private fun customSpinnerEvent() {
         val items =
             arrayOf("Marriage 1", "Party 2", "Birthday  3", "Anniversary 4", "Rewards Party 5")
-        val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
+        val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
         binding.customSpinner1.adapter = adapter
     }
     private fun customSpinnerChooseEventCategory() {
         val items =
             arrayOf("Dawat Waleema1", "Reception ", "Price Reward", "Annual Party", "Eid Party")
-        val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
+        val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
         binding.customSpinner2.adapter = adapter
     }
     private fun customSpinnerTotalMaximumCapacity() {
         val items = arrayOf("100-200", "200-300 ", "300-400", "400-500")
-        val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
+        val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
         binding.customSpinner3.adapter = adapter
     }
     private fun customSpinnerAgeGroup() {
         val items = arrayOf("18", "19 ", "20", "21")
-        val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
+        val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
         binding.customSpinner4.adapter = adapter
     }
 }

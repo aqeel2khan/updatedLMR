@@ -7,7 +7,7 @@
 
     <include app:graph="@navigation/batchboard_navigation" />
     <include app:graph="@navigation/workout_navigation" />
-    <include app:graph="@navigation/meal_batch_navigation" />
+    <include app:graph="@navigation/create_event_navigation" />
     <include app:graph="@navigation/shopping_navigation" />
     <include app:graph="@navigation/scanning_navigation" />
 

@@ -61,7 +61,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 }
                 R.id.meal_fragment -> {
                     binding.tvHeading.text = "Meal Batch"
-                    navigateToRootNode(R.id.meal_navigation)
+                    navigateToRootNode(R.id.event_navigation)
                 }
                 R.id.shopping_fragment -> {
                     binding.tvHeading.text = "Shopping Batch"

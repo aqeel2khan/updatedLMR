@@ -33,6 +33,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.activity.MainActivity">
+
+        </activity>
 <!--        <activity-->
 <!--            android:name=".view.activity.ExploreActivity"-->
 <!--            android:exported="false" />-->
@@ -81,7 +84,7 @@
             android:name="com.example.batchfinal.view.activity.EventDescriptionActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.batchfinal.view.activity.BasicDetailsActivity"
+            android:name="com.example.batchfinal.view.fragment.BasicDetailsFragment"
             android:exported="false" />
     </application>
 

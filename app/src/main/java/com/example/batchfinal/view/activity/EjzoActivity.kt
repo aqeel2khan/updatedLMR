@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import com.example.batchfinal.R
 import com.example.batchfinal.databinding.ActivityEjzoBinding
 import com.example.batchfinal.view.BaseActivity
+import com.example.batchfinal.view.fragment.BasicDetailsFragment
 import com.example.batchfinal.viewmodel.BaseViewModel
 import com.example.batchfinal.viewmodel.EjzoViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,7 +36,7 @@ class EjzoActivity : BaseActivity<ActivityEjzoBinding>() {
         }
 
         binding.loginButton.setOnClickListener {
-            val intentObj = Intent(this, BasicDetailsActivity::class.java)
+            val intentObj = Intent(this, MainActivity::class.java)
             val numberType = binding.numberEditText.text.toString()
             val countryCode = binding.countryCodeText.text.toString()
             intentObj.putExtra("number", numberType)
