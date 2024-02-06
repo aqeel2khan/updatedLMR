@@ -108,52 +108,22 @@
                     android:layout_marginTop="15sp"
                     android:background="@drawable/custom_dropdown_background">
 
-                    <RelativeLayout
-                        android:id="@+id/rleventtype"
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:backgroundTint="@color/black"
+                        android:src="@drawable/group" />
+
+                    <Spinner
+                        android:id="@+id/customSpinner1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        >
-                        <com.example.batchfinal.custom.MyCustomTextView
-                            android:id="@+id/tveventselection"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="@dimen/_10ssp"
-                            android:textColor="@color/black"
-                            android:imeOptions="actionNext"
-                            android:singleLine="true"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:inputType="textCapWords"
-                            android:hint="@string/typeofevent"
-                            android:background="@null"
-                            android:textSize="@dimen/_11sdp"
-                            />
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="@dimen/_12sdp"
-                            android:layout_height="@dimen/_12sdp"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            android:src="@drawable/arrow_down_dark_blue"/>
-
-                    </RelativeLayout>
-
-
-                    <!--                    <ImageView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_gravity="center"-->
-<!--                        android:layout_marginStart="10dp"-->
-<!--                        android:backgroundTint="@color/black"-->
-<!--                        android:src="@drawable/group" />-->
-
-<!--                    <Spinner-->
-<!--                        android:id="@+id/customSpinner1"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_gravity="center"-->
-<!--                        android:layout_marginStart="5dp"-->
-<!--                        android:elevation="0dp"-->
-<!--                        android:padding="5dp" />-->
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:elevation="0dp"
+                        android:padding="5dp" />
 
 
                 </LinearLayout>
