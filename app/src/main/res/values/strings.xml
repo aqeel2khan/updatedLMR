@@ -78,6 +78,8 @@
     <string name="portrait_photography_nevent">Portrait Photography \nEvent</string>
     <string name="about">About</string>
     <string name="event_type">Event Type</string>
+    <string name="type_of_event"> Type of Event </string>
+
     <string name="marriage">Marriage</string>
     <string name="event_category">Event Category</string>
     <string name="celebration">Celebration</string>

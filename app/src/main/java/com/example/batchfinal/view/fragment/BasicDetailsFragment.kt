@@ -4,7 +4,9 @@ import android.content.Intent
 import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
 import com.example.batchfinal.R
+import com.example.batchfinal.adapter.CustomSpinerEventCategoryAdapter
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
+import com.example.batchfinal.model.response.EventCategoryModelResponse
 import com.example.batchfinal.view.BaseFragment
 import com.example.batchfinal.view.activity.EventDescriptionActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
@@ -55,9 +57,12 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
         viewModel.callPostEvent(JsonObject())
     }
     private fun customSpinnerEvent() {
-        val items =
-            arrayOf("Marriage 1", "Party 2", "Birthday  3", "Anniversary 4", "Rewards Party 5")
-        val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
+//        val items =
+//            arrayOf("Marriage 1", "Party 2", "Birthday  3", "Anniversary 4", "Rewards Party 5")
+//        val listCategoryEvent = arrayListOf<EventCategoryModelResponse>()
+////        val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
+        val listCategoryEvent = arrayListOf<EventCategoryModelResponse>()
+        val adapter = CustomSpinerEventCategoryAdapter(requireContext(), listCategoryEvent)
         binding.customSpinner1.adapter = adapter
     }
     private fun customSpinnerChooseEventCategory() {
