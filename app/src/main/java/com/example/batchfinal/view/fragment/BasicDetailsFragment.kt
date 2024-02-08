@@ -61,11 +61,11 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
             startActivity(Intent(requireActivity(), EventDescriptionActivity::class.java))
         }
         //Todo Call API Get Category Event from Server via API
-        viewModel.getCategoryEvents()
+        serviceProviderApi()
     }
 
     private fun serviceProviderApi() {
-
+        viewModel.getCategoryEvents()
         showLoader()
         if (CheckNetworkConnection.isConnection(binding.root.context, binding.root, true)) {
             viewModel.getCategoryEvents()
