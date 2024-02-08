@@ -1,32 +1,32 @@
 package com.example.batchfinal.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.batchfinal.model.LoginResponseModel
-import com.example.batchfinal.repository.UserRepository
+import com.example.batchfinal.model.response.EventCategoryModelResponse
+import com.example.batchfinal.repository.BasicDetailRepository
 import com.example.batchfinal.utils.NetworkErrorResult
-import com.google.gson.JsonObject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class BasicDetailViewModel @Inject constructor(
-    private val userRepo: UserRepository
+    private val basicDetailRepository: BasicDetailRepository
 ) : BaseViewModel() {
 
-    // Login Api
-    var _loginResponse: MutableLiveData<NetworkErrorResult<LoginResponseModel>> = MutableLiveData()
+    var _eventcategoryResponse: MutableLiveData<NetworkErrorResult<EventCategoryModelResponse>> = MutableLiveData()
+
     // Create Event Model Response
-    val loginResponse: LiveData<NetworkErrorResult<LoginResponseModel>>
-        get() = _loginResponse
-    fun loginApiCall(jsonObject: JsonObject) = viewModelScope.launch {
-        userRepo.loginApi(jsonObject).collect { values ->
-            _loginResponse.value = values
-        }
+    val eventcategoryResponse: MutableLiveData<NetworkErrorResult<EventCategoryModelResponse>>
+        get() = _eventcategoryResponse
+
+    fun getCategoryEvents() = viewModelScope.launch {
+
+         basicDetailRepository.getCategoryEvent().collect(){values ->
+             _eventcategoryResponse.value =NetworkErrorResult.Loading()
+             _eventcategoryResponse.value = values
+         }
     }
-    fun callPostEvent(jsonObject: JsonObject) = viewModelScope.launch {
-        userRepo.loginApi(jsonObject)
-    }
+
+
 }

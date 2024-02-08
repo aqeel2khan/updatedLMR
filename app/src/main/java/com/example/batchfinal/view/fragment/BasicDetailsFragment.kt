@@ -1,18 +1,25 @@
 package com.example.batchfinal.view.fragment
 
 import android.content.Intent
+import android.util.Log
 import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.example.batchfinal.R
 import com.example.batchfinal.adapter.CustomSpinerEventCategoryAdapter
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
 import com.example.batchfinal.model.response.EventCategoryModelResponse
+import com.example.batchfinal.utils.CheckNetworkConnection
+import com.example.batchfinal.utils.MyUtils
+import com.example.batchfinal.utils.NetworkErrorResult
+import com.example.batchfinal.utils.snackBarWithRedBackground
 import com.example.batchfinal.view.BaseFragment
 import com.example.batchfinal.view.activity.EventDescriptionActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
 import com.example.batchfinal.viewmodel.BasicDetailViewModel
-import com.google.gson.JsonObject
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
@@ -53,9 +60,60 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
         binding.saveAndContinueButtonBasic.setOnClickListener {
             startActivity(Intent(requireActivity(), EventDescriptionActivity::class.java))
         }
-        //Todo Call API
-        viewModel.callPostEvent(JsonObject())
+        //Todo Call API Get Category Event from Server via API
+        viewModel.getCategoryEvents()
     }
+
+    private fun serviceProviderApi() {
+
+        showLoader()
+        if (CheckNetworkConnection.isConnection(binding.root.context, binding.root, true)) {
+            viewModel.getCategoryEvents()
+            viewModel.eventcategoryResponse.observe(this){
+                when(it){
+                    is NetworkErrorResult.Success->{
+                        viewModel.eventcategoryResponse.removeObservers(this)
+                        if (viewModel.eventcategoryResponse.hasObservers()) return@observe
+                        hideLoader()
+                        lifecycleScope.launch {
+                            it.let {
+                                val response = it.data
+                                Log.e("providerList",response.toString())
+                                if(response.success){
+
+                                    if(!response?.data.isNullOrEmpty()){
+                                       // setRecylerServices(response.data.reviews)
+
+
+                                    }else{
+
+                                    }
+
+
+                                }
+
+                            }
+                        }
+                    }
+                    is NetworkErrorResult.Error->{
+                        viewModel.eventcategoryResponse.removeObservers(this)
+                        if ( viewModel.eventcategoryResponse.hasObservers()) return@observe
+                        hideLoader()
+                        snackBarWithRedBackground(binding.root, MyUtils.errorBody(it.message,binding.root.context))
+                    }
+                    is NetworkErrorResult.Loading->{
+                        hideLoader()
+                    }
+
+                    else -> {
+
+                    }
+                }
+            }
+        }
+    }
+
+
     private fun customSpinnerEvent() {
 //        val items =
 //            arrayOf("Marriage 1", "Party 2", "Birthday  3", "Anniversary 4", "Rewards Party 5")

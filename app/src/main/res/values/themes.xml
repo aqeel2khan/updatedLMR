@@ -34,4 +34,29 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">@dimen/_6ssp</item>
     </style>
+
+    <style name="CustomSnackbarThemeBlack">
+        <item name="snackbarStyle">@style/MySnackBarStyleBack</item>
+    </style>
+
+    <style name="MySnackBarStyleBack" parent="Widget.MaterialComponents.Snackbar">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="CustomSnackbarThemeGreen">
+        <item name="snackbarStyle">@style/MySnackBarStyleGreen</item>
+    </style>
+
+    <style name="MySnackBarStyleGreen" parent="Widget.MaterialComponents.Snackbar">
+        <item name="android:background">@color/greenColor</item>
+    </style>
+
+    <style name="CustomSnackbarThemeRed">
+        <item name="snackbarStyle">@style/MySnackBarStyleRed</item>
+    </style>
+
+    <style name="MySnackBarStyleRed" parent="Widget.MaterialComponents.Snackbar">
+        <item name="android:background">@color/chillRedColor</item>
+
+    </style>
 </resources>

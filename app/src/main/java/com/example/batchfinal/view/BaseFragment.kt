@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.example.batchfinal.view.activity.MainActivity
 import com.example.batchfinal.utils.AppSharedPreferences
+import com.example.batchfinal.utils.LoaderFragment
 import com.example.batchfinal.viewmodel.BaseViewModel
 import javax.inject.Inject
 
@@ -46,6 +47,21 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
 //            e.printStackTrace()
 //        }
 //    }
+
+    fun showLoader() {
+        try {
+            LoaderFragment.showLoader(requireActivity().supportFragmentManager)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+    fun hideLoader() {
+        try {
+            LoaderFragment.dismissLoader(requireActivity().supportFragmentManager)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 
     protected open fun setErrorAndSpinnerObserver(): Boolean {
         return true

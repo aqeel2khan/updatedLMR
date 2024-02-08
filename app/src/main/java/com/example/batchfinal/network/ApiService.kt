@@ -1,6 +1,7 @@
 package com.example.batchfinal.network
 
 import com.example.batchfinal.model.LoginResponseModel
+import com.example.batchfinal.model.response.EventCategoryModelResponse
 import com.google.gson.JsonObject
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -12,6 +13,9 @@ interface ApiService {
 
     @POST("api/User/VerifyOTP")
     suspend fun verifyOTPApi(@Body jsonObject: JsonObject): LoginResponseModel
+
+    @GET("api/Events/GetEventCategory")
+    suspend fun categoryEventApi(): EventCategoryModelResponse
 
     @GET("/api/Events/GetTotalMaximumCapacity")
     suspend fun getTotalMaximumCapacityApi(@Body jsonObject: JsonObject): LoginResponseModel

@@ -157,6 +157,10 @@ Sed venenatis in nulla neque elementum nunc. Vitae est in elementum morbi sagitt
         <item>4 Weeks</item>
     </string-array>
 
+    <string name="internet_is_not_available">Internet is not available</string>
+
+    <string name="please_wait">please_wait</string>
+
     <!--buy subscription text-->
     <string name="workout_batch_capital">WORKOUT BATCH</string>
     <string name="txt_weight_loss">Weight Lost</string>
