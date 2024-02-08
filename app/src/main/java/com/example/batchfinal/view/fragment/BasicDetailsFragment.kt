@@ -1,5 +1,6 @@
 package com.example.batchfinal.view.fragment
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.util.Log
 import android.widget.ArrayAdapter
@@ -64,11 +65,14 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
         serviceProviderApi()
     }
 
+    @SuppressLint("LogNotTimber")
     private fun serviceProviderApi() {
-        viewModel.getCategoryEvents()
-        showLoader()
+
+
         if (CheckNetworkConnection.isConnection(binding.root.context, binding.root, true)) {
+            showLoader()
             viewModel.getCategoryEvents()
+
             viewModel.eventcategoryResponse.observe(this){
                 when(it){
                     is NetworkErrorResult.Success->{
@@ -78,8 +82,8 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
                         lifecycleScope.launch {
                             it.let {
                                 val response = it.data
-                                Log.e("providerList",response.toString())
-                                if(response.success){
+                                Log.e("response",response.toString())
+                                if(response!!.success){
 
                                     if(!response?.data.isNullOrEmpty()){
                                        // setRecylerServices(response.data.reviews)
