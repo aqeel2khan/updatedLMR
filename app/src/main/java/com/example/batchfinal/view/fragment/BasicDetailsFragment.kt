@@ -88,6 +88,7 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
                                     if(!response?.data.isNullOrEmpty()){
                                        // setRecylerServices(response.data.reviews)
 
+                                    //    response.data.
 
                                     }else{
 
