@@ -14,7 +14,7 @@ import com.example.batchfinal.model.response.EventCategoryModelResponse
 import com.example.batchfinal.utils.CheckNetworkConnection
 import com.example.batchfinal.utils.MyUtils
 import com.example.batchfinal.utils.NetworkErrorResult
-import com.example.batchfinal.utils.snackBarWithRedBackground
+//import com.example.batchfinal.utils.snackBarWithRedBackground
 import com.example.batchfinal.view.BaseFragment
 import com.example.batchfinal.view.activity.EventDescriptionActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
@@ -62,11 +62,11 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
             startActivity(Intent(requireActivity(), EventDescriptionActivity::class.java))
         }
         //Todo Call API Get Category Event from Server via API
-        serviceProviderApi()
+        servicecategoryeEventApi()
     }
 
     @SuppressLint("LogNotTimber")
-    private fun serviceProviderApi() {
+    private fun servicecategoryeEventApi() {
 
 
         if (CheckNetworkConnection.isConnection(binding.root.context, binding.root, true)) {
@@ -103,7 +103,7 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
                         viewModel.eventcategoryResponse.removeObservers(this)
                         if ( viewModel.eventcategoryResponse.hasObservers()) return@observe
                         hideLoader()
-                        snackBarWithRedBackground(binding.root, MyUtils.errorBody(it.message,binding.root.context))
+                     //   snackBarWithRedBackground(binding.root, MyUtils.errorBody(it.message,binding.root.context))
                     }
                     is NetworkErrorResult.Loading->{
                         hideLoader()
