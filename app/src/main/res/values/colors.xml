@@ -41,6 +41,7 @@
     <color name="light_gray">#aeaeae</color>
     <color name="light_transparent">#00ffffff</color>
     <color name="GREEN">#00FF00</color>
+    <color name="bluedark">#395BDB</color>
 
     <color name="chillRedColor">#E11900</color>
     <color name="lightRedColor">#F9DBD2</color>

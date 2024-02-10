@@ -20,7 +20,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:background="@android:color/transparent"
             android:layout_height="wrap_content"/>
-        <com.in10mServiceMan.ui.viewmodel.custom.CustomTextView
+        <com.example.batchfinal.custom.MyCustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/_12sdp"
