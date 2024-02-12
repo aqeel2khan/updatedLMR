@@ -137,6 +137,7 @@ Sed venenatis in nulla neque elementum nunc. Vitae est in elementum morbi sagitt
     <!-- TODO: Remove or change this placeholder text -->
     <string name="subscribe_for_a_course">Subscribe for a Course</string>
     <string name="_15_20_min">15-20 min</string>
+    <string name="please_wait_">Please wait</string>
 
     <!--workout txt-->
     <string name="current_batch">Current Batch</string>

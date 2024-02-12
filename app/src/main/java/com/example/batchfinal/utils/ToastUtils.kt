@@ -24,9 +24,9 @@ import java.util.*
 
 
 fun Context.showToast(message: CharSequence?) = Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-fun showSnackBar(view: View, message: CharSequence?) = Snackbar.make(ContextThemeWrapper(view.context, R.style.CustomSnackbarThemeBlack),view, message!!, Snackbar.LENGTH_SHORT).show()
+//fun showSnackBar(view: View, message: CharSequence?) = Snackbar.make(ContextThemeWrapper(view.context, R.style.CustomSnackbarThemeBlack),view, message!!, Snackbar.LENGTH_SHORT).show()
 fun snackBarWithGreenBackground(view: View, message: CharSequence?) = Snackbar.make(ContextThemeWrapper(view.context, R.style.CustomSnackbarThemeGreen),view, message!!, Snackbar.LENGTH_SHORT).show()
-fun snackBarWithRedBackground(view: View, message: CharSequence?) = Snackbar.make(ContextThemeWrapper(view.context, R.style.CustomSnackbarThemeRed),view, message!!, Snackbar.LENGTH_SHORT).show()
+//fun snackBarWithRedBackground(view: View, message: CharSequence?) = Snackbar.make(ContextThemeWrapper(view.context, R.style.CustomSnackbarThemeRed),view, message!!, Snackbar.LENGTH_SHORT).show()
 
 
 fun log(mess:String?){

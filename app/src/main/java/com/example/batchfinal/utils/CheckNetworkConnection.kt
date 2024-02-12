@@ -16,8 +16,9 @@ object CheckNetworkConnection {
         return if (conn != null && conn.isAvailable && conn.isConnected){
             true
         }else{
-            if (toast)
-                showSnackBar(view,context.getString(R.string.internet_is_not_available))
+            if (toast) {
+                //  showSnackBar(view,context.getString(R.string.internet_is_not_available))
+            }
 
             false
         }
@@ -35,7 +36,7 @@ object CheckNetworkConnection {
             }
         } else {
             return connectivityManager.activeNetworkInfo?.isConnected ?: false
-            showSnackBar(view,context.getString(R.string.internet_is_not_available))
+           // showSnackBar(view,context.getString(R.string.internet_is_not_available))
         }
     }
 }

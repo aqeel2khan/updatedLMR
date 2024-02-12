@@ -3,14 +3,13 @@ package com.example.batchfinal.model.response
 import com.google.gson.annotations.SerializedName
 
 data class EventCategoryModelResponse(
-    @SerializedName("message") val message: String,
-    @SerializedName("success") val success: Boolean,
-    @SerializedName("data") val data: List<EventCategory>
+    @field:SerializedName("message") val message: String,
+    @field:SerializedName("success") val success: Boolean,
+    @field:SerializedName("data") val data: MutableList<EventCategory>
 )
-
 data class EventCategory(
-    @SerializedName("eventTypeID") val eventTypeID: Int,
-    @SerializedName("eventTypeNameEnglish") val eventTypeNameEnglish: String,
-    @SerializedName("eventTypeNameArabic") val eventTypeNameArabic: String,
-    @SerializedName("language") val language: String
+    @field:SerializedName("eventTypeID") val eventTypeID: Int,
+    @field:SerializedName("eventTypeNameEnglish") val eventTypeNameEnglish: String,
+    @field:SerializedName("eventTypeNameArabic") val eventTypeNameArabic: String,
+    @field:SerializedName("language") val language: String
 )

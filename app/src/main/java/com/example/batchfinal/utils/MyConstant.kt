@@ -1,7 +1,7 @@
 package com.example.batchfinal.utils
 
 object MyConstant {
-    const val BASE_URL = "https://skazulebackend.chawtechsolutions.ch/api/"
+    const val BASE_URL = "http://44.204.169.69/"
     const val IMAGE_BASE_URL = "https://skazulebackend.chawtechsolutions.ch/storage/app/"
     const val DEVICE_TYPE= "1"
     const val CAMERA_REQUEST_CODE = 103
