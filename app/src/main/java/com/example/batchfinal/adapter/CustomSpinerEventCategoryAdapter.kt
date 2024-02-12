@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.example.batchfinal.model.response.EventCategoryModelResponse
+import com.example.batchfinal.model.response.EventCategory
 
-class CustomSpinerEventCategoryAdapter(context: Context, private val items: ArrayList<EventCategoryModelResponse>) :
-    ArrayAdapter<EventCategoryModelResponse>(context, android.R.layout.simple_spinner_dropdown_item, items) {
+class CustomSpinerEventCategoryAdapter(context: Context, private val items: MutableList<EventCategory>?) :
+    ArrayAdapter<EventCategory>(context, android.R.layout.simple_spinner_dropdown_item, items!!) {
 
 
 
@@ -25,7 +25,9 @@ class CustomSpinerEventCategoryAdapter(context: Context, private val items: Arra
         private fun createView(position: Int, convertView: View?, parent: ViewGroup): View {
             val view = convertView ?: LayoutInflater.from(context).inflate(android.R.layout.simple_spinner_dropdown_item, parent, false)
             val textView = view.findViewById<TextView>(android.R.id.text1)
-//            textView.text = items[position].name
+        val mEventCategory= items!![position]
+            textView.text = mEventCategory?.eventTypeNameEnglish
+//
             return view
         }
     }
