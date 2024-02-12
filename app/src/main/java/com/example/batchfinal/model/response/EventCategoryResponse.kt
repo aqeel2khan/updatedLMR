@@ -8,8 +8,8 @@ data class EventCategoryModelResponse(
     @field:SerializedName("data") val data: MutableList<EventCategory>
 )
 data class EventCategory(
-    @field:SerializedName("eventTypeID") val eventTypeID: Int,
-    @field:SerializedName("eventTypeNameEnglish") val eventTypeNameEnglish: String,
-    @field:SerializedName("eventTypeNameArabic") val eventTypeNameArabic: String,
+    @field:SerializedName("eventCategoryID") val eventTypeID: Int,
+    @field:SerializedName("eventCategoryNameEnglish") val eventTypeNameEnglish: String,
+    @field:SerializedName("eventCategoryNameArabic") val eventTypeNameArabic: String,
     @field:SerializedName("language") val language: String
 )
