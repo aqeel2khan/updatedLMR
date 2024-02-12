@@ -1,6 +1,7 @@
 package com.example.batchfinal.repository
 
 import com.example.batchfinal.model.response.EventCategoryModelResponse
+import com.example.batchfinal.model.response.EventResponse
 import com.example.batchfinal.network.ApiService
 import com.example.batchfinal.utils.NetworkErrorResult
 import kotlinx.coroutines.Dispatchers
@@ -13,6 +14,14 @@ class BasicDetailRepository @Inject constructor(private val apiService: ApiServi
     suspend fun getCategoryEvent(): Flow<NetworkErrorResult<EventCategoryModelResponse>> {
         return flow {
             emit(safeApiCall { apiService.categoryEventApi() })
+        }.flowOn(Dispatchers.IO)
+    }
+
+
+
+    suspend fun getEventType(): Flow<NetworkErrorResult<EventResponse>> {
+        return flow {
+            emit(safeApiCall { apiService.EventTypeApi() })
         }.flowOn(Dispatchers.IO)
     }
 }

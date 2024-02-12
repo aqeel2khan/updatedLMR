@@ -2,6 +2,7 @@ package com.example.batchfinal.network
 
 import com.example.batchfinal.model.LoginResponseModel
 import com.example.batchfinal.model.response.EventCategoryModelResponse
+import com.example.batchfinal.model.response.EventResponse
 import com.google.gson.JsonObject
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -16,6 +17,9 @@ interface ApiService {
 
     @GET("api/Events/GetEventCategory")
     suspend fun categoryEventApi(): EventCategoryModelResponse
+
+    @GET("api/Events/GetEventType")
+    suspend fun EventTypeApi(): EventResponse
 
     @GET("/api/Events/GetTotalMaximumCapacity")
     suspend fun getTotalMaximumCapacityApi(@Body jsonObject: JsonObject): LoginResponseModel
