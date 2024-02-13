@@ -53,20 +53,28 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
 //        supportActionBar!!.setDisplayShowTitleEnabled(false)
 
         binding.publicEvent.setOnClickListener {
-            isPrivateEvent = !isPrivateEvent
-            binding.publicEvent.isChecked = isPrivateEvent
+            isPrivateEvent = false
+            isPublicEvent = true
+            binding.publicEvent.isChecked = true
+            binding.privateEvent.isChecked = false
         }
         binding.privateEvent.setOnClickListener {
-            isPublicEvent = !isPublicEvent
-            binding.privateEvent.isChecked = isPublicEvent
+            isPublicEvent = false
+            isPrivateEvent = true
+            binding.privateEvent.isChecked = true
+            binding.publicEvent.isChecked = false
         }
         binding.freeEvent.setOnClickListener {
-            isFreeEvent = !isFreeEvent
-            binding.freeEvent.isChecked = isFreeEvent
+            isFreeEvent = true
+            isPaidEvent = false
+            binding.freeEvent.isChecked = true
+            binding.paidEvent.isChecked = false
         }
         binding.paidEvent.setOnClickListener {
-            isPaidEvent = !isPaidEvent
-            binding.paidEvent.isChecked = isPaidEvent
+            isFreeEvent = false
+            isPaidEvent = true
+            binding.paidEvent.isChecked = true
+            binding.freeEvent.isChecked = false
         }
         customSpinnerAgeGroup();
         binding.saveAndContinueButtonBasic.setOnClickListener {
