@@ -29,9 +29,9 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
-    private lateinit var customEventCategorySpinner: CustomSpinerEventCategoryAdapter
-    private lateinit var customEventTypeSpinner: EventTypeSpinnerAdapter
-    private lateinit var customMaxCapacitySpinner:  MaxCapacitySpinnerAdapter
+    private lateinit var customEventCategorySpinnerAdapter: CustomSpinerEventCategoryAdapter
+    private lateinit var customEventTypeSpinnerAdapter: EventTypeSpinnerAdapter
+    private lateinit var customMaxCapacitySpinnerAdapter:  MaxCapacitySpinnerAdapter
 
 
     private  var eventcategorySelected : EventCategory? = null
@@ -203,8 +203,8 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
     private fun setDataforMaxCapacitySpinner(data: MutableList<CapacityData>?) {
 
         try {
-            customMaxCapacitySpinner =  MaxCapacitySpinnerAdapter(requireContext(), data)
-            binding.customSpinner3.adapter=customEventTypeSpinner
+            customMaxCapacitySpinnerAdapter =  MaxCapacitySpinnerAdapter(requireContext(), data)
+            binding.customSpinner3.adapter=customMaxCapacitySpinnerAdapter
             binding.customSpinner3?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
 
@@ -284,8 +284,8 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
 
     private fun setDataforEventTypeSpinner(data: MutableList<Event>?) {
         try {
-            customEventTypeSpinner =  EventTypeSpinnerAdapter(requireContext(), data)
-            binding.customSpinner1.adapter=customEventTypeSpinner
+            customEventTypeSpinnerAdapter =  EventTypeSpinnerAdapter(requireContext(), data)
+            binding.customSpinner1.adapter=customEventTypeSpinnerAdapter
             binding.customSpinner1?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
 
@@ -306,8 +306,8 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
     private fun setDataforCategorySpinner(listEventCategory: MutableList<EventCategory>?) {
 
         try {
-            customEventCategorySpinner =  CustomSpinerEventCategoryAdapter(requireContext(), listEventCategory)
-            binding.customSpinner2.adapter=customEventCategorySpinner
+            customEventCategorySpinnerAdapter =  CustomSpinerEventCategoryAdapter(requireContext(), listEventCategory)
+            binding.customSpinner2.adapter=customEventCategorySpinnerAdapter
             binding.customSpinner2?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
 
