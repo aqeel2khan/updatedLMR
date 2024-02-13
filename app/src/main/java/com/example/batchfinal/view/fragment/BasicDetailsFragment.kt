@@ -11,7 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import com.example.batchfinal.R
 import com.example.batchfinal.adapter.CustomSpinerEventCategoryAdapter
 import com.example.batchfinal.adapter.EventTypeSpinnerAdapter
+import com.example.batchfinal.adapter.MaxCapacitySpinnerAdapter
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
+import com.example.batchfinal.model.response.CapacityData
 import com.example.batchfinal.model.response.Event
 import com.example.batchfinal.model.response.EventCategory
 import com.example.batchfinal.model.response.EventCategoryModelResponse
@@ -29,10 +31,12 @@ import kotlinx.coroutines.launch
 class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
     private lateinit var customEventCategorySpinner: CustomSpinerEventCategoryAdapter
     private lateinit var customEventTypeSpinner: EventTypeSpinnerAdapter
+    private lateinit var customMaxCapacitySpinner:  MaxCapacitySpinnerAdapter
 
 
     private  var eventcategorySelected : EventCategory? = null
     private  var eventTypeSelected : Event? = null
+    private var  capacityDataSelected :CapacityData ? = null
 
     private val viewModel: BasicDetailViewModel by viewModels()
     override fun getViewModel(): BaseViewModel {
@@ -64,8 +68,6 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
             isPaidEvent = !isPaidEvent
             binding.paidEvent.isChecked = isPaidEvent
         }
-        customSpinnerEvent();
-        customSpinnerTotalMaximumCapacity();
         customSpinnerAgeGroup();
         binding.saveAndContinueButtonBasic.setOnClickListener {
             startActivity(Intent(requireActivity(), EventDescriptionActivity::class.java))
@@ -74,6 +76,9 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
         servicecategoryeEventApi()
 
         serviceeventType()
+        serviceMaximumCapacity()
+
+
     }
 
     @SuppressLint("LogNotTimber")
@@ -135,6 +140,88 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
             e.printStackTrace()
         }
     }
+
+    private fun serviceMaximumCapacity() {
+
+
+        try {
+            if (CheckNetworkConnection.isConnection(binding.root.context, binding.root, true)) {
+                //   showLoader()
+                viewModel.getMaximumCapacity()
+
+                viewModel.maximumCapacityResponse.observe(this){
+                    when(it){
+                        is NetworkErrorResult.Success->{
+                            viewModel.maximumCapacityResponse.removeObservers(this)
+                            if (viewModel.maximumCapacityResponse.hasObservers()) return@observe
+                            //     hideLoader()
+                            lifecycleScope.launch {
+                                it.let {
+                                    val response = it.data
+                                    //    Log.e("response",response.toString())
+                                    if(response!!.success){
+
+                                        if(!response?.data.isNullOrEmpty()){
+                                            // setRecylerServices(response.data.reviews)
+
+                                            setDataforMaxCapacitySpinner(response?.data)
+
+                                        }else{
+
+                                        }
+
+                                        //    response.data.
+
+                                    }else{
+
+                                    }
+
+                                }
+                            }
+                        }
+                        is NetworkErrorResult.Error->{
+                            viewModel.eventcategoryResponse.removeObservers(this)
+                            if ( viewModel.eventcategoryResponse.hasObservers()) return@observe
+                            //   hideLoader()
+                            //   snackBarWithRedBackground(binding.root, MyUtils.errorBody(it.message,binding.root.context))
+                        }
+                        is NetworkErrorResult.Loading->{
+                            //  hideLoader()
+                        }
+
+                        else -> {
+
+                        }
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun setDataforMaxCapacitySpinner(data: MutableList<CapacityData>?) {
+
+        try {
+            customMaxCapacitySpinner =  MaxCapacitySpinnerAdapter(requireContext(), data)
+            binding.customSpinner3.adapter=customEventTypeSpinner
+            binding.customSpinner3?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+
+                    capacityDataSelected=     data?.get(position)
+                } // to close the onItemSelected
+
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                }
+
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+    }
+
 
     private fun serviceeventType() {
 
@@ -249,11 +336,7 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
         val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
         binding.customSpinner2.adapter = adapter
     }
-    private fun customSpinnerTotalMaximumCapacity() {
-        val items = arrayOf("100-200", "200-300 ", "300-400", "400-500")
-        val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
-        binding.customSpinner3.adapter = adapter
-    }
+
     private fun customSpinnerAgeGroup() {
         val items = arrayOf("18", "19 ", "20", "21")
         val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
