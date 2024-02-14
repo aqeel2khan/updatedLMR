@@ -42,8 +42,7 @@
                     android:layout_centerVertical="true"
                     android:text="Basic Details"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/_15ssp"
                     tools:ignore="RtlSymmetry" />
 
                 <LinearLayout

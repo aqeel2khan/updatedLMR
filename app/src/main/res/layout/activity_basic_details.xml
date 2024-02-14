@@ -37,22 +37,22 @@
                     android:id="@+id/tvstep1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="left|center_vertical"
-                    android:text="Step1"
+                    android:text="Step-1"
                     android:textColor="@color/redlight"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/_20ssp"
+                    />
 
                 <TextView
                     android:id="@+id/tvnameyour"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvstep1"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="Name Your event and tell event-goers why they should com"
                     android:textColor="@color/grey2"
-                    android:textSize="12sp" />
+                    android:textSize="@dimen/_10ssp" />
 
                 <TextView
                     android:id="@+id/tvadddetails"
@@ -62,14 +62,14 @@
                     android:gravity="left|center"
                     android:text="Add details that highlight what makes it unique"
                     android:textColor="@color/grey2"
-                    android:textSize="12sp" />
+                    android:textSize="@dimen/_10ssp"  />
 
                 <LinearLayout
                     android:id="@+id/ll2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvadddetails"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:orientation="vertical">
 
                     <TextView
@@ -78,9 +78,10 @@
                         android:layout_height="18dp"
                         android:layout_gravity="left|center_vertical"
                         android:text="Event Name"
+                        android:textAllCaps="true"
                         android:textColor="@color/grey2"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/_14ssp"
+                        />
 
                     <EditText
                         android:id="@+id/eventEditText"
@@ -88,14 +89,19 @@
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
                         android:autofillHints=""
-                        android:background="@drawable/form_shape"
+                        android:background="@color/white"
                         android:hint="event name"
                         android:paddingHorizontal="15dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/grey2"
                         android:textColorHighlight="@color/black"
                         android:textColorHint="#9F9CB0"
-                        android:textSize="15sp"
+                        android:textSize="@dimen/_15ssp"
                         tools:ignore="TextFields" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_676767" />
 
 
                 </LinearLayout>
@@ -105,6 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_below="@+id/ll2"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/custom_dropdown_background">
 
                     <ImageView
@@ -122,7 +129,6 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
                         android:prompt="@string/type_of_event"
-                        android:layout_marginEnd="10dp"
                         android:elevation="0dp"
                         android:padding="5dp" />
 
@@ -199,10 +205,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="2dp"
+                        android:textColor="@color/t5F5F7A_color"
+                        android:textSize="@dimen/_14ssp"
                         android:text="Publishing Mehtod"
-                        android:textColor="@color/grey3"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -227,11 +233,15 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="PUBLIC"
-                                android:textStyle="bold" />
+                                android:textColor="@color/t5F5F7A_color"
+                                android:textSize="@dimen/_14ssp"
+                                />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:textSize="@dimen/_10ssp"
+                                android:textColor="@color/color_5F5F7A"
                                 android:text="@string/event_will_be_available_publicly_for_all_users" />
                         </LinearLayout>
                     </LinearLayout>
@@ -258,11 +268,15 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
+                                android:textColor="@color/t5F5F7A_color"
+                                android:textSize="@dimen/_14ssp"
                                 android:text="PRIVATE"
-                                android:textStyle="bold" />
+                                 />
 
                             <TextView
                                 android:layout_width="wrap_content"
+                                android:textSize="@dimen/_10ssp"
+                                android:textColor="@color/color_5F5F7A"
                                 android:layout_height="wrap_content"
                                 android:text="Event will be available only to the people either have url or received invitation." />
                         </LinearLayout>
@@ -284,9 +298,9 @@
                         android:layout_height="wrap_content"
                         android:padding="2dp"
                         android:text="TICKETING"
-                        android:textColor="@color/grey3"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/t5F5F7A_color"
+                        android:textSize="@dimen/_14ssp"
+                        />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -305,7 +319,6 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
                             android:orientation="vertical">
 
                             <TextView
@@ -313,11 +326,15 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="Free"
-                                android:textStyle="bold" />
+                                android:textColor="@color/t5F5F7A_color"
+                                android:textSize="@dimen/_14ssp"
+                               />
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:textSize="@dimen/_10ssp"
+                                android:textColor="@color/color_5F5F7A"
                                 android:text="Event will be available publicly for all users" />
                         </LinearLayout>
                     </LinearLayout>
@@ -345,10 +362,14 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:text="Paid"
-                                android:textStyle="bold" />
+                                android:textColor="@color/t5F5F7A_color"
+                                android:textSize="@dimen/_14ssp"
+                               />
 
                             <TextView
                                 android:layout_width="wrap_content"
+                                android:textSize="@dimen/_10ssp"
+                                android:textColor="@color/color_5F5F7A"
                                 android:layout_height="wrap_content"
                                 android:text="Event will be available only to the people either have url or received invitation." />
                         </LinearLayout>
@@ -362,9 +383,9 @@
                     android:layout_below="@+id/ll8"
                     android:layout_marginTop="10dp"
                     android:text="Age Group"
-                    android:textColor="@color/grey3"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@color/color_5F5F7A"
+                   />
 
                 <RelativeLayout
                     android:id="@+id/ll16"
@@ -410,7 +431,7 @@
                         android:gravity="center"
                         android:text="SAVE &amp; CONTINUE"
                         android:textColor="@color/grey"
-                        android:textSize="14dp" />
+                        android:textSize="@dimen/_14ssp" />
 
                     <ImageView
                         android:layout_width="15dp"
