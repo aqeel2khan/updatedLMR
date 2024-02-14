@@ -91,7 +91,7 @@
                         android:autofillHints=""
                         android:background="@color/white"
                         android:hint="event name"
-                        android:paddingHorizontal="15dp"
+                        android:padding="5dp"
                         android:textColor="@color/grey2"
                         android:textColorHighlight="@color/black"
                         android:textColorHint="#9F9CB0"
@@ -128,8 +128,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
-                        android:prompt="@string/type_of_event"
                         android:elevation="0dp"
+                        style="@style/SpinnerTheme"
                         android:padding="5dp" />
 
 
@@ -159,7 +159,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:elevation="0dp"
-
+                        style="@style/SpinnerTheme"
                         android:padding="5dp" />
 
                 </LinearLayout>
@@ -188,6 +188,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        style="@style/SpinnerTheme"
                         android:padding="5dp" />
 
                 </LinearLayout>
@@ -404,6 +405,7 @@
                         android:layout_marginStart="5dp"
                         android:elevation="0dp"
                         android:padding="5dp"
+                        style="@style/SpinnerTheme"
                         tools:listitem="@layout/custom_dropdown_item" />
 
 

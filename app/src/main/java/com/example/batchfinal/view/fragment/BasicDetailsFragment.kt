@@ -211,6 +211,9 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
     private fun setDataforMaxCapacitySpinner(data: MutableList<CapacityData>?) {
 
         try {
+
+            val addHint = CapacityData(-1,"MAXIMUM")
+            data!!.add(0,addHint)
             customMaxCapacitySpinnerAdapter =  MaxCapacitySpinnerAdapter(requireContext(), data)
             binding.customSpinner3.adapter=customMaxCapacitySpinnerAdapter
             binding.customSpinner3?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -292,6 +295,8 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
 
     private fun setDataforEventTypeSpinner(data: MutableList<Event>?) {
         try {
+            val addHint = Event(-1,"TYPE OF EVENT","","EN")
+            data!!.add(0,addHint)
             customEventTypeSpinnerAdapter =  EventTypeSpinnerAdapter(requireContext(), data)
             binding.customSpinner1.adapter=customEventTypeSpinnerAdapter
             binding.customSpinner1?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -314,6 +319,8 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
     private fun setDataforCategorySpinner(listEventCategory: MutableList<EventCategory>?) {
 
         try {
+            val addHint = EventCategory(-1,"CHOOSE CATEGORY","","EN")
+            listEventCategory!!.add(0,addHint)
             customEventCategorySpinnerAdapter =  CustomSpinerEventCategoryAdapter(requireContext(), listEventCategory)
             binding.customSpinner2.adapter=customEventCategorySpinnerAdapter
             binding.customSpinner2?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
