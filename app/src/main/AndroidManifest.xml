@@ -87,6 +87,7 @@
             android:exported="false" />
         <activity
             android:name="com.example.batchfinal.view.fragment.BasicDetailsFragment"
+            android:theme="@style/Theme.LMR_ActionBar"
             android:exported="false" />
     </application>
 

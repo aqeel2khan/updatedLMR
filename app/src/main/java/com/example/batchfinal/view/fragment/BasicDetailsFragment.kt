@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.activity.viewModels
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.batchfinal.R
@@ -13,14 +15,14 @@ import com.example.batchfinal.adapter.CustomSpinerEventCategoryAdapter
 import com.example.batchfinal.adapter.EventTypeSpinnerAdapter
 import com.example.batchfinal.adapter.MaxCapacitySpinnerAdapter
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
+import com.example.batchfinal.model.request.PostBasicDetailEvent
 import com.example.batchfinal.model.response.CapacityData
 import com.example.batchfinal.model.response.Event
 import com.example.batchfinal.model.response.EventCategory
 import com.example.batchfinal.model.response.EventCategoryModelResponse
 import com.example.batchfinal.utils.CheckNetworkConnection
 import com.example.batchfinal.utils.NetworkErrorResult
-//import com.example.batchfinal.utils.snackBarWithRedBackground
-import com.example.batchfinal.view.BaseFragment
+import com.example.batchfinal.view.BaseActivity
 import com.example.batchfinal.view.activity.EventDescriptionActivity
 import com.example.batchfinal.viewmodel.BaseViewModel
 import com.example.batchfinal.viewmodel.BasicDetailViewModel
@@ -28,7 +30,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
+class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
     private lateinit var customEventCategorySpinnerAdapter: CustomSpinerEventCategoryAdapter
     private lateinit var customEventTypeSpinnerAdapter: EventTypeSpinnerAdapter
     private lateinit var customMaxCapacitySpinnerAdapter:  MaxCapacitySpinnerAdapter
@@ -48,9 +50,9 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
     private var isFreeEvent = true
     private var isPaidEvent = true
     override fun initUi() {
-//        val toolbar: Toolbar = findViewById(R.id.toolbar)
-//        setSupportActionBar(toolbar)
-//        supportActionBar!!.setDisplayShowTitleEnabled(false)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
 
         binding.publicEvent.setOnClickListener {
             isPrivateEvent = false
@@ -78,24 +80,35 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
         }
         customSpinnerAgeGroup();
         binding.saveAndContinueButtonBasic.setOnClickListener {
-            startActivity(Intent(requireActivity(), EventDescriptionActivity::class.java))
+
+            // post data to api
+            postData()
+            startActivity(Intent(this, EventDescriptionActivity::class.java))
         }
         //Todo Call API Get Category Event from Server via API
-        servicecategoryeEventApi()
+        categoryEventApi()
 
-        serviceeventType()
-        serviceMaximumCapacity()
+        eventTypeApi()
+        maximumCapacityApi()
 
 
     }
 
+    private fun postData() {
+
+       var eventName= binding.eventEditText.text.toString()
+
+       // var mPostBasicDetailEvent =  PostBasicDetailEvent()
+
+    }
+
     @SuppressLint("LogNotTimber")
-    private fun servicecategoryeEventApi() {
+    private fun categoryEventApi() {
 
 
         try {
             if (CheckNetworkConnection.isConnection(binding.root.context, binding.root, true)) {
-                showLoader()
+              //  showLoader()
                 viewModel.getCategoryEvents()
 
                 viewModel.eventcategoryResponse.observe(this){
@@ -103,7 +116,7 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
                         is NetworkErrorResult.Success->{
                             viewModel.eventcategoryResponse.removeObservers(this)
                             if (viewModel.eventcategoryResponse.hasObservers()) return@observe
-                            hideLoader()
+                         //   hideLoader()
                             lifecycleScope.launch {
                                 it.let {
                                     val response = it.data
@@ -131,11 +144,11 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
                         is NetworkErrorResult.Error->{
                             viewModel.eventcategoryResponse.removeObservers(this)
                             if ( viewModel.eventcategoryResponse.hasObservers()) return@observe
-                            hideLoader()
+                        //    hideLoader()
                          //   snackBarWithRedBackground(binding.root, MyUtils.errorBody(it.message,binding.root.context))
                         }
                         is NetworkErrorResult.Loading->{
-                            hideLoader()
+                        //    hideLoader()
                         }
 
                         else -> {
@@ -149,7 +162,7 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
         }
     }
 
-    private fun serviceMaximumCapacity() {
+    private fun maximumCapacityApi() {
 
 
         try {
@@ -214,7 +227,7 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
 
             val addHint = CapacityData(-1,"MAXIMUM")
             data!!.add(0,addHint)
-            customMaxCapacitySpinnerAdapter =  MaxCapacitySpinnerAdapter(requireContext(), data)
+            customMaxCapacitySpinnerAdapter =  MaxCapacitySpinnerAdapter(this, data)
             binding.customSpinner3.adapter=customMaxCapacitySpinnerAdapter
             binding.customSpinner3?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
@@ -234,7 +247,7 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
     }
 
 
-    private fun serviceeventType() {
+    private fun eventTypeApi() {
 
 
         try {
@@ -297,7 +310,7 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
         try {
             val addHint = Event(-1,"TYPE OF EVENT","","EN")
             data!!.add(0,addHint)
-            customEventTypeSpinnerAdapter =  EventTypeSpinnerAdapter(requireContext(), data)
+            customEventTypeSpinnerAdapter =  EventTypeSpinnerAdapter(this, data)
             binding.customSpinner1.adapter=customEventTypeSpinnerAdapter
             binding.customSpinner1?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
@@ -321,7 +334,7 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
         try {
             val addHint = EventCategory(-1,"CHOOSE CATEGORY","","EN")
             listEventCategory!!.add(0,addHint)
-            customEventCategorySpinnerAdapter =  CustomSpinerEventCategoryAdapter(requireContext(), listEventCategory)
+            customEventCategorySpinnerAdapter =  CustomSpinerEventCategoryAdapter(this, listEventCategory)
             binding.customSpinner2.adapter=customEventCategorySpinnerAdapter
             binding.customSpinner2?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
@@ -340,21 +353,16 @@ class BasicDetailsFragment : BaseFragment<ActivityBasicDetailsBinding>() {
     }
 
 
-    private fun customSpinnerEvent() {
-
-//        val adapter = CustomSpinerEventCategoryAdapter(requireContext(), listCategoryEvent)
-//        binding.customSpinner1.adapter = adapter
-    }
     private fun customSpinnerChooseEventCategory() {
         val items =
             arrayOf("Dawat Waleema1", "Reception ", "Price Reward", "Annual Party", "Eid Party")
-        val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
+        val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
         binding.customSpinner2.adapter = adapter
     }
 
     private fun customSpinnerAgeGroup() {
         val items = arrayOf("18", "19 ", "20", "21")
-        val adapter = ArrayAdapter(requireContext(), R.layout.custom_dropdown_item, items)
+        val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
         binding.customSpinner4.adapter = adapter
     }
 }

@@ -5,12 +5,15 @@
     android:id="@+id/event_navigation"
     app:startDestination="@id/createeventFragment">
 
-    <fragment
+<!--    <fragment-->
+<!--        android:id="@+id/createeventFragment"-->
+<!--        android:name="com.example.batchfinal.view.fragment.BasicDetailsFragment"-->
+<!--        tools:layout="@layout/fragment_meal">-->
+
+    <activity
         android:id="@+id/createeventFragment"
         android:name="com.example.batchfinal.view.fragment.BasicDetailsFragment"
         tools:layout="@layout/fragment_meal">
-
-
-    </fragment>
+    </activity>
 
 </navigation>
