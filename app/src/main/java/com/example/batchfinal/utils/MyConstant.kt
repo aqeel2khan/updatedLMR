@@ -8,6 +8,7 @@ object MyConstant {
     const val GALLERY_REQUEST_CODE = 104
     var isAdded = false
     var isRefresh = false
+    const val PERMISSION_REQUEST_CODE = 10002
 
     var key ="KEY"
 

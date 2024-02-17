@@ -189,6 +189,7 @@
                                 tools:ignore="UseCompoundDrawables">
 
                                 <ImageView
+                                    android:id="@+id/addImage"
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:padding="10dp"
