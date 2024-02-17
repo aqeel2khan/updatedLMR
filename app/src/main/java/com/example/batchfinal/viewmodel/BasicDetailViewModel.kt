@@ -2,9 +2,12 @@ package com.example.batchfinal.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.batchfinal.model.request.PostBasicDetailEvent
+import com.example.batchfinal.model.response.AgeGroupResponse
 import com.example.batchfinal.model.response.EventCategoryModelResponse
 import com.example.batchfinal.model.response.EventResponse
 import com.example.batchfinal.model.response.MaximumCapacityModel
+import com.example.batchfinal.model.response.PostEventResponse
 import com.example.batchfinal.repository.BasicDetailRepository
 import com.example.batchfinal.utils.NetworkErrorResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,6 +23,9 @@ class BasicDetailViewModel @Inject constructor(
     var _eventTypeResponse: MutableLiveData<NetworkErrorResult<EventResponse>> = MutableLiveData()
 
     var _maximumCapacityResponse: MutableLiveData<NetworkErrorResult<MaximumCapacityModel>> = MutableLiveData()
+    var _ageGroupResponse: MutableLiveData<NetworkErrorResult<AgeGroupResponse>> = MutableLiveData()
+
+    var _postEventResponse: MutableLiveData<NetworkErrorResult<PostEventResponse>> = MutableLiveData()
 
 
 
@@ -32,6 +38,12 @@ class BasicDetailViewModel @Inject constructor(
 
     val maximumCapacityResponse: MutableLiveData<NetworkErrorResult<MaximumCapacityModel>>
         get() = _maximumCapacityResponse
+
+    var ageGroupResponse: MutableLiveData<NetworkErrorResult<AgeGroupResponse>> = MutableLiveData()
+        get() = _ageGroupResponse
+
+    var postEventResponse: MutableLiveData<NetworkErrorResult<PostEventResponse>> = MutableLiveData()
+        get() = _postEventResponse
 
     fun getCategoryEvents() = viewModelScope.launch {
 
@@ -54,6 +66,22 @@ class BasicDetailViewModel @Inject constructor(
         basicDetailRepository.getmaximumCapacity().collect(){values ->
             _maximumCapacityResponse.value =NetworkErrorResult.Loading()
             _maximumCapacityResponse.value = values
+        }
+    }
+
+    fun getAgeApi() = viewModelScope.launch {
+
+        basicDetailRepository.getAge().collect(){values ->
+            _ageGroupResponse.value =NetworkErrorResult.Loading()
+            _ageGroupResponse.value = values
+        }
+    }
+
+    fun postEventData(mPostBasicDetailEvent: PostBasicDetailEvent) = viewModelScope.launch {
+
+        basicDetailRepository.postEventData(mPostBasicDetailEvent).collect(){values ->
+            postEventResponse.value =NetworkErrorResult.Loading()
+            postEventResponse.value = values
         }
     }
 

@@ -2,24 +2,23 @@ package com.example.batchfinal.view.fragment
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.batchfinal.R
+import com.example.batchfinal.adapter.AgeGroupSpinnerAdapter
 import com.example.batchfinal.adapter.CustomSpinerEventCategoryAdapter
 import com.example.batchfinal.adapter.EventTypeSpinnerAdapter
 import com.example.batchfinal.adapter.MaxCapacitySpinnerAdapter
 import com.example.batchfinal.databinding.ActivityBasicDetailsBinding
 import com.example.batchfinal.model.request.PostBasicDetailEvent
+import com.example.batchfinal.model.response.AgeGroupData
 import com.example.batchfinal.model.response.CapacityData
 import com.example.batchfinal.model.response.Event
 import com.example.batchfinal.model.response.EventCategory
-import com.example.batchfinal.model.response.EventCategoryModelResponse
 import com.example.batchfinal.utils.CheckNetworkConnection
 import com.example.batchfinal.utils.NetworkErrorResult
 import com.example.batchfinal.view.BaseActivity
@@ -34,11 +33,13 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
     private lateinit var customEventCategorySpinnerAdapter: CustomSpinerEventCategoryAdapter
     private lateinit var customEventTypeSpinnerAdapter: EventTypeSpinnerAdapter
     private lateinit var customMaxCapacitySpinnerAdapter:  MaxCapacitySpinnerAdapter
+    private lateinit var ageGroupSpinnerAdapter :AgeGroupSpinnerAdapter
 
 
     private  var eventcategorySelected : EventCategory? = null
     private  var eventTypeSelected : Event? = null
-    private var  capacityDataSelected :CapacityData ? = null
+    private var  eventCapacityDataSelected :CapacityData ? = null
+    private var eventAgeGroupData :AgeGroupData ? = null
 
     private val viewModel: BasicDetailViewModel by viewModels()
     override fun getViewModel(): BaseViewModel {
@@ -55,57 +56,194 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
         supportActionBar!!.setDisplayShowTitleEnabled(false)
 
         binding.publicEvent.setOnClickListener {
-            isPrivateEvent = false
             isPublicEvent = true
             binding.publicEvent.isChecked = true
             binding.privateEvent.isChecked = false
         }
         binding.privateEvent.setOnClickListener {
             isPublicEvent = false
-            isPrivateEvent = true
             binding.privateEvent.isChecked = true
             binding.publicEvent.isChecked = false
         }
         binding.freeEvent.setOnClickListener {
             isFreeEvent = true
-            isPaidEvent = false
             binding.freeEvent.isChecked = true
             binding.paidEvent.isChecked = false
         }
         binding.paidEvent.setOnClickListener {
             isFreeEvent = false
-            isPaidEvent = true
             binding.paidEvent.isChecked = true
             binding.freeEvent.isChecked = false
         }
         customSpinnerAgeGroup();
         binding.saveAndContinueButtonBasic.setOnClickListener {
-
             // post data to api
             postData()
-            startActivity(Intent(this, EventDescriptionActivity::class.java))
+
         }
         //Todo Call API Get Category Event from Server via API
         categoryEventApi()
-
         eventTypeApi()
         maximumCapacityApi()
+        ageApi()
 
+
+    }
+
+    private fun ageApi() {
+
+            try {
+                if (CheckNetworkConnection.isConnection(binding.root.context, binding.root, true)) {
+                    //  showLoader()
+                    viewModel.getAgeApi()
+
+                    viewModel.ageGroupResponse.observe(this){
+                        when(it){
+                            is NetworkErrorResult.Success->{
+                                viewModel.ageGroupResponse.removeObservers(this)
+                                if (viewModel.ageGroupResponse.hasObservers()) return@observe
+                                //   hideLoader()
+                                lifecycleScope.launch {
+                                    it.let {
+                                        val response = it.data
+                                        //    Log.e("response",response.toString())
+                                        if(response!!.success){
+
+                                            if(!response?.data.isNullOrEmpty()){
+                                                // setRecylerServices(response.data.reviews)
+
+                                                setDataForAgeSelection(response?.data)
+
+                                            }else{
+
+                                            }
+
+                                            //    response.data.
+
+                                        }else{
+
+                                        }
+
+                                    }
+                                }
+                            }
+                            is NetworkErrorResult.Error->{
+                                viewModel.ageGroupResponse.removeObservers(this)
+                                if ( viewModel.ageGroupResponse.hasObservers()) return@observe
+                                //    hideLoader()
+                                //   snackBarWithRedBackground(binding.root, MyUtils.errorBody(it.message,binding.root.context))
+                            }
+                            is NetworkErrorResult.Loading->{
+                                //    hideLoader()
+                            }
+
+                            else -> {
+
+                            }
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+    }
+
+    private fun setDataForAgeSelection(data: MutableList<AgeGroupData>?) {
+        try {
+
+            val addHint = AgeGroupData(-1,"AGE GROUP")
+            data!!.add(0,addHint)
+
+            ageGroupSpinnerAdapter =  AgeGroupSpinnerAdapter(this, data)
+            binding.customSpinner4.adapter=ageGroupSpinnerAdapter
+            binding.customSpinner4?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+
+                    eventAgeGroupData=     data?.get(position)
+                } // to close the onItemSelected
+
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                }
+
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
 
     }
 
     private fun postData() {
 
-       var eventName= binding.eventEditText.text.toString()
+       val mPostBasicDetailEvent =  PostBasicDetailEvent()
+        mPostBasicDetailEvent.eventName = binding.eventEditText.toString()
+        mPostBasicDetailEvent.eventTypeID = eventTypeSelected?.eventTypeID?:0
+        mPostBasicDetailEvent.eventCategoryID = eventcategorySelected?.eventTypeID?:0
+        mPostBasicDetailEvent.maximumCapacity =  eventCapacityDataSelected?.totalMaximumCapacityId?:0
+        mPostBasicDetailEvent.ageGroupID =  eventAgeGroupData?.ageGroupID?:0
+        if(isFreeEvent){
+            mPostBasicDetailEvent.ticketType =  0
+        }else{
+            mPostBasicDetailEvent.ticketType =  1
+        }
+        if(isPublicEvent){
+            mPostBasicDetailEvent.publishingMethod =  0
+        }else{
+            mPostBasicDetailEvent.publishingMethod =  1
+        }
 
-       // var mPostBasicDetailEvent =  PostBasicDetailEvent()
+        viewModel.postEventData(mPostBasicDetailEvent)
+        PostEventResponseData()
 
+    }
+
+    private fun PostEventResponseData() {
+            try {
+                    //   showLoader()
+                    viewModel.postEventResponse.observe(this){
+                        when(it){
+                            is NetworkErrorResult.Success->{
+                                viewModel.postEventResponse.removeObservers(this)
+                                if (viewModel.postEventResponse.hasObservers()) return@observe
+                                //     hideLoader()
+                                lifecycleScope.launch {
+                                    it.let {
+                                        val response = it.data
+
+                                        if(response!!.success){
+
+                                         this@BasicDetailsFragment.   startActivity(Intent(this@BasicDetailsFragment, EventDescriptionActivity::class.java))
+                                        }else{
+
+
+                                        }
+
+                                    }
+                                }
+                            }
+                            is NetworkErrorResult.Error->{
+                                viewModel.postEventResponse.removeObservers(this)
+                                if ( viewModel.postEventResponse.hasObservers()) return@observe
+                                //   hideLoader()
+                                //   snackBarWithRedBackground(binding.root, MyUtils.errorBody(it.message,binding.root.context))
+                            }
+                            is NetworkErrorResult.Loading->{
+                                //  hideLoader()
+                            }
+
+                            else -> {
+
+                            }
+                        }
+                    }
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
     }
 
     @SuppressLint("LogNotTimber")
     private fun categoryEventApi() {
-
-
         try {
             if (CheckNetworkConnection.isConnection(binding.root.context, binding.root, true)) {
               //  showLoader()
@@ -163,8 +301,6 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
     }
 
     private fun maximumCapacityApi() {
-
-
         try {
             if (CheckNetworkConnection.isConnection(binding.root.context, binding.root, true)) {
                 //   showLoader()
@@ -190,9 +326,6 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
                                         }else{
 
                                         }
-
-                                        //    response.data.
-
                                     }else{
 
                                     }
@@ -201,8 +334,8 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
                             }
                         }
                         is NetworkErrorResult.Error->{
-                            viewModel.eventcategoryResponse.removeObservers(this)
-                            if ( viewModel.eventcategoryResponse.hasObservers()) return@observe
+                            viewModel.maximumCapacityResponse.removeObservers(this)
+                            if ( viewModel.maximumCapacityResponse.hasObservers()) return@observe
                             //   hideLoader()
                             //   snackBarWithRedBackground(binding.root, MyUtils.errorBody(it.message,binding.root.context))
                         }
@@ -222,7 +355,6 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
     }
 
     private fun setDataforMaxCapacitySpinner(data: MutableList<CapacityData>?) {
-
         try {
 
             val addHint = CapacityData(-1,"MAXIMUM")
@@ -232,7 +364,7 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
             binding.customSpinner3?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
 
-                    capacityDataSelected=     data?.get(position)
+                    eventCapacityDataSelected=     data?.get(position)
                 } // to close the onItemSelected
 
                 override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -243,18 +375,12 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
         } catch (e: Exception) {
             e.printStackTrace()
         }
-
     }
-
-
     private fun eventTypeApi() {
-
-
         try {
             if (CheckNetworkConnection.isConnection(binding.root.context, binding.root, true)) {
              //   showLoader()
                 viewModel.getEventsType()
-
                 viewModel.eventTypeResponse.observe(this){
                     when(it){
                         is NetworkErrorResult.Success->{
@@ -286,8 +412,8 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
                             }
                         }
                         is NetworkErrorResult.Error->{
-                            viewModel.eventcategoryResponse.removeObservers(this)
-                            if ( viewModel.eventcategoryResponse.hasObservers()) return@observe
+                            viewModel.eventTypeResponse.removeObservers(this)
+                            if ( viewModel.eventTypeResponse.hasObservers()) return@observe
                          //   hideLoader()
                             //   snackBarWithRedBackground(binding.root, MyUtils.errorBody(it.message,binding.root.context))
                         }
@@ -305,7 +431,6 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
             e.printStackTrace()
         }
     }
-
     private fun setDataforEventTypeSpinner(data: MutableList<Event>?) {
         try {
             val addHint = Event(-1,"TYPE OF EVENT","","EN")
@@ -327,8 +452,6 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
             e.printStackTrace()
         }
     }
-
-
     private fun setDataforCategorySpinner(listEventCategory: MutableList<EventCategory>?) {
 
         try {
@@ -351,15 +474,6 @@ class BasicDetailsFragment : BaseActivity<ActivityBasicDetailsBinding>() {
            e.printStackTrace()
         }
     }
-
-
-    private fun customSpinnerChooseEventCategory() {
-        val items =
-            arrayOf("Dawat Waleema1", "Reception ", "Price Reward", "Annual Party", "Eid Party")
-        val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)
-        binding.customSpinner2.adapter = adapter
-    }
-
     private fun customSpinnerAgeGroup() {
         val items = arrayOf("18", "19 ", "20", "21")
         val adapter = ArrayAdapter(this, R.layout.custom_dropdown_item, items)

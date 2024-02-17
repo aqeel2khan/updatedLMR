@@ -37,9 +37,9 @@
                     android:id="@+id/tvstep1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="Step-1"
                     android:layout_marginTop="10dp"
                     android:gravity="left|center_vertical"
-                    android:text="Step-1"
                     android:textColor="@color/redlight"
                     android:textSize="@dimen/_20ssp"
                     />
@@ -50,9 +50,11 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvstep1"
                     android:layout_marginTop="10dp"
-                    android:text="Name Your event and tell event-goers why they should com"
+                    android:textSize="@dimen/_10ssp"
                     android:textColor="@color/grey2"
-                    android:textSize="@dimen/_10ssp" />
+                    android:text="Name Your event and tell event-goers why they should com"
+
+                    />
 
                 <TextView
                     android:id="@+id/tvadddetails"
@@ -377,23 +379,23 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tvagegroup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/ll8"
-                    android:layout_marginTop="10dp"
-                    android:text="Age Group"
-                    android:textSize="@dimen/_14ssp"
-                    android:textColor="@color/color_5F5F7A"
-                   />
+<!--                <TextView-->
+<!--                    android:id="@+id/tvagegroup"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/ll8"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:text="Age Group"-->
+<!--                    android:textSize="@dimen/_14ssp"-->
+<!--                    android:textColor="@color/color_5F5F7A"-->
+<!--                   />-->
 
                 <RelativeLayout
                     android:id="@+id/ll16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvagegroup"
-                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/ll8"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/custom_dropdown_background"
                     android:padding="2dp">
 
