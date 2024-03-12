@@ -19,7 +19,7 @@
         android:paddingBottom="@dimen/cnb_space_1"
         tools:background="#000">
 
-        <com.example.batchfinal.chipNavigation.view.BadgeImageView
+        <com.example.lmr.chipNavigation.view.BadgeImageView
             android:id="@+id/cnb_item_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

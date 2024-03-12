@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:orientation="vertical">
-                    <com.example.batchfinal.custom.MyCustomTextView
+                    <com.example.lmr.custom.MyCustomTextView
                         android:id="@+id/product_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                         android:fontFamily="@font/outfit_extra_bold"
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold" />
-                    <com.example.batchfinal.custom.MyCustomTextView
+                    <com.example.lmr.custom.MyCustomTextView
                         android:id="@+id/product_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

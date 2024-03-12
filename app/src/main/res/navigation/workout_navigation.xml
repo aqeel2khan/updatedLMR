@@ -6,7 +6,7 @@
     app:startDestination="@id/workoutFragment">
     <fragment
         android:id="@+id/workoutFragment"
-        android:name="com.example.batchfinal.view.fragment.WorkOutFragment"
+        android:name="com.example.lmr.view.fragment.WorkOutFragment"
         tools:layout="@layout/fragment_work_out" >
 
     </fragment>

@@ -59,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <com.example.batchfinal.custom.MyCustomTextView
+                <com.example.lmr.custom.MyCustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
@@ -81,7 +81,7 @@
                     android:background="@color/work_color"
                     android:padding="@dimen/_15sdp">
 
-                    <com.example.batchfinal.custom.MyCustomTextView
+                    <com.example.lmr.custom.MyCustomTextView
                         android:id="@+id/workout_type"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -133,14 +133,14 @@
                                 android:src="@drawable/flash_icon"
                                 app:tint="@color/white" />
 
-                            <com.example.batchfinal.custom.MyCustomTextView
+                            <com.example.lmr.custom.MyCustomTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="131"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/_12ssp"
                                 android:textStyle="bold" />
-                            <com.example.batchfinal.custom.MyCustomTextView
+                            <com.example.lmr.custom.MyCustomTextView
                                 android:id="@+id/tv_boost_kcal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
                                 android:src="@drawable/clock"
                                 app:tint="@color/white" />
 
-                            <com.example.batchfinal.custom.MyCustomTextView
+                            <com.example.lmr.custom.MyCustomTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/_2sdp"
@@ -172,7 +172,7 @@
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/_12ssp"
                                 android:textStyle="bold" />
-                            <com.example.batchfinal.custom.MyCustomTextView
+                            <com.example.lmr.custom.MyCustomTextView
                                 android:id="@+id/tv_boost_min_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -197,7 +197,7 @@
                             android:layout_height="28dp"
                             android:src="@drawable/profile_image" />
 
-                        <com.example.batchfinal.custom.MyCustomTextView
+                        <com.example.lmr.custom.MyCustomTextView
                             android:id="@+id/userName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -227,7 +227,7 @@
                 android:layout_height="@dimen/_20sdp"
                 android:src="@drawable/calender"
                 app:tint="@color/terms_color" />
-            <com.example.batchfinal.custom.MyCustomTextView
+            <com.example.lmr.custom.MyCustomTextView
                 android:layout_weight="0.7"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -282,7 +282,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.example.batchfinal.custom.MyCustomTextView
+                <com.example.lmr.custom.MyCustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
@@ -303,7 +303,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginEnd="@dimen/_20sdp">
-                    <com.example.batchfinal.custom.MyCustomTextView
+                    <com.example.lmr.custom.MyCustomTextView
                         android:id="@+id/batch_pro"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -316,7 +316,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true">
-                        <com.example.batchfinal.custom.MyCustomTextView
+                        <com.example.lmr.custom.MyCustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$78"
@@ -324,7 +324,7 @@
                             android:textSize="@dimen/_16ssp"
                             android:textColor="@color/white" />
 
-                        <com.example.batchfinal.custom.MyCustomTextView
+                        <com.example.lmr.custom.MyCustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="/month"
@@ -335,7 +335,7 @@
 
                     </LinearLayout>
                 </RelativeLayout>
-                <com.example.batchfinal.custom.MyCustomTextView
+                <com.example.lmr.custom.MyCustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_8sdp"
@@ -363,7 +363,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.example.batchfinal.custom.MyCustomTextView
+                <com.example.lmr.custom.MyCustomTextView
                     android:id="@+id/durationText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -374,7 +374,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/_16ssp" />
 
-                <com.example.batchfinal.custom.MyCustomTextView
+                <com.example.lmr.custom.MyCustomTextView
                     android:id="@+id/dollerText2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -397,7 +397,7 @@
                 android:text="@string/txt_check_out"
                 android:textColor="@color/white" />
         </LinearLayout>
-        <com.example.batchfinal.custom.MyCustomTextView
+        <com.example.lmr.custom.MyCustomTextView
             android:id="@+id/txt_add_promo"
             android:layout_below="@id/ll_total_sybscribe"
             android:layout_width="wrap_content"

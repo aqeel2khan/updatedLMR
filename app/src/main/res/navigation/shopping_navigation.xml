@@ -7,7 +7,7 @@
     >
     <fragment
         android:id="@+id/shoppingFragment"
-        android:name="com.example.batchfinal.view.fragment.ShoppingFragment"
+        android:name="com.example.lmr.view.fragment.ShoppingFragment"
         tools:layout="@layout/fragment_shopping" >
 
     </fragment>

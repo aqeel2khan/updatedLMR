@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.example.batchfinal.view.fragment.HomeFragment"
+        android:name="com.example.lmr.view.fragment.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/workout_fragment"
-        android:name="com.example.batchfinal.view.fragment.WorkOutFragment"
+        android:name="com.example.lmr.view.fragment.WorkOutFragment"
         android:label="WorkOut"
         tools:layout="@layout/fragment_work_out" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/meal_fragment"
-        android:name="com.example.batchfinal.view.fragment.MealFragment"
+        android:name="com.example.lmr.view.fragment.MealFragment"
         android:label="Meal"
         tools:layout="@layout/fragment_meal" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/shopping_fragment"
-        android:name="com.example.batchfinal.view.fragment.ShoppingFragment"
+        android:name="com.example.lmr.view.fragment.ShoppingFragment"
         android:label="Shopping"
         tools:layout="@layout/fragment_shopping" >
         <action
@@ -44,7 +44,7 @@
 
     <fragment
         android:id="@+id/scanning_fragment"
-        android:name="com.example.batchfinal.view.fragment.ScanningFragment"
+        android:name="com.example.lmr.view.fragment.ScanningFragment"
         android:label="Scanning"
         tools:layout="@layout/fragment_scanning" />
 </navigation>

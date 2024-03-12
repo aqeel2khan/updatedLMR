@@ -1,0 +1,26 @@
+package com.example.lmr.view.activity
+
+import android.content.Intent
+import androidx.activity.viewModels
+import com.example.lmr.databinding.ActivityVerificationBinding
+import com.example.lmr.view.BaseActivity
+import com.example.lmr.viewmodel.AllViewModel
+import com.example.lmr.viewmodel.BaseViewModel
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class VerificationActivity : BaseActivity<ActivityVerificationBinding>() {
+    private val viewModel: AllViewModel by viewModels()
+    override fun getViewModel(): BaseViewModel {
+        return viewModel
+    }
+
+    override fun initUi() {
+        binding.verificationButton.setOnClickListener {
+            startActivity(Intent(this, ExploreActivity::class.java))
+        }
+
+    }
+
+    override fun getViewBinding() = ActivityVerificationBinding.inflate(layoutInflater)
+}

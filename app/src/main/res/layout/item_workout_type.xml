@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginStart="@dimen/_8sdp">
-                <com.example.batchfinal.custom.MyCustomTextView
+                <com.example.lmr.custom.MyCustomTextView
                     android:id="@+id/weight_loss_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
                             android:layout_width="@dimen/_16sdp"
                             android:layout_height="@dimen/_16sdp"
                             android:src="@drawable/flash_icon"/>
-                        <com.example.batchfinal.custom.MyCustomTextView
+                        <com.example.lmr.custom.MyCustomTextView
                             android:id="@+id/tv_boost"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                             android:textColor="@color/black"
                             android:textFontWeight="500"
                             android:textSize="@dimen/_14ssp" />
-                        <com.example.batchfinal.custom.MyCustomTextView
+                        <com.example.lmr.custom.MyCustomTextView
                             android:id="@+id/tv_boost_kcal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                             android:layout_height="@dimen/_16sdp"
                             android:src="@drawable/clock"
                             app:tint="@color/terms_color" />
-                        <com.example.batchfinal.custom.MyCustomTextView
+                        <com.example.lmr.custom.MyCustomTextView
                             android:id="@+id/tv_boost_min"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
                             android:textColor="@color/black"
                             android:textFontWeight="500"
                             android:textSize="@dimen/_14ssp" />
-                        <com.example.batchfinal.custom.MyCustomTextView
+                        <com.example.lmr.custom.MyCustomTextView
                             android:id="@+id/tv_boost_min_txt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

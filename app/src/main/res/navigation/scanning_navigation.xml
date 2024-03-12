@@ -7,7 +7,7 @@
     >
     <fragment
         android:id="@+id/scanningFragment"
-        android:name="com.example.batchfinal.view.fragment.ScanningFragment"
+        android:name="com.example.lmr.view.fragment.ScanningFragment"
         tools:layout="@layout/fragment_scanning" >
 
     </fragment>

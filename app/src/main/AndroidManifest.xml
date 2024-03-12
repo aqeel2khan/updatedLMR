@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <application
-        android:name="com.example.batchfinal.App"
+        android:name="com.example.lmr.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -28,7 +28,7 @@
 <!--            android:name=".view.activity.MotivatorDetailActivity"-->
 <!--            android:exported="false" />-->
         <activity
-            android:name="com.example.batchfinal.view.activity.EjzoActivity"
+            android:name="com.example.lmr.view.activity.EjzoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,37 +57,37 @@
 
 
         <activity
-            android:name="com.example.batchfinal.view.activity.EventActivity"
+            android:name="com.example.lmr.view.activity.EventActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.batchfinal.view.activity.PreviewsActivity"
+            android:name="com.example.lmr.view.activity.PreviewsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.ajzoproject.dashboard.DashboardActivity"
+            android:name="com.example.lmr.dashboard.DashboardActivity"
             android:exported="false" />
 <!--        <activity-->
 <!--            android:name=""-->
 <!--            android:exported="false" />-->
         <activity
-            android:name="com.example.batchfinal.view.activity.TicketingSeatDetailsActivity"
+            android:name="com.example.lmr.view.activity.TicketingSeatDetailsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.batchfinal.view.activity.OrganizerDetailsActivity"
+            android:name="com.example.lmr.view.activity.OrganizerDetailsActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.batchfinal.view.activity.LocationActivity"
+            android:name="com.example.lmr.view.activity.LocationActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.batchfinal.view.activity.TicketingSeatActivity"
+            android:name="com.example.lmr.view.activity.TicketingSeatActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.batchfinal.view.activity.DateTime3Activity"
+            android:name="com.example.lmr.view.activity.DateTime3Activity"
             android:exported="false" />
         <activity
-            android:name="com.example.batchfinal.view.activity.EventDescriptionActivity"
+            android:name="com.example.lmr.view.activity.EventDescriptionActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.batchfinal.view.fragment.BasicDetailsFragment"
+            android:name="com.example.lmr.view.fragment.BasicDetailsFragment"
             android:theme="@style/Theme.LMR_ActionBar"
             android:exported="false" />
     </application>

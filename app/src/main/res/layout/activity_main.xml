@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white_color"
-    tools:context=".view.activity.MainActivity">
+   >
 
     <RelativeLayout
         android:id="@+id/header_title"
@@ -19,7 +19,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="@dimen/_10sdp">
 
-            <com.example.batchfinal.custom.MyCustomTextView
+            <com.example.lmr.custom.MyCustomTextView
                 android:id="@+id/tv_heading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/gradient_bg_white"
         android:layout_height="@dimen/_60sdp">
-        <com.example.batchfinal.chipNavigation.ChipNavigationBar
+        <com.example.lmr.chipNavigation.ChipNavigationBar
             android:id="@+id/bottom_nav_bar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp"

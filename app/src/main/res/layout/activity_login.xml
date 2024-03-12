@@ -18,7 +18,7 @@
         android:padding="@dimen/_8sdp"
         android:src="@drawable/arrow_back_black" />
 
-    <com.example.batchfinal.custom.MyCustomTextView
+    <com.example.lmr.custom.MyCustomTextView
         android:id="@+id/welcomeBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         android:textSize="@dimen/_22ssp"
         android:textStyle="bold" />
 
-    <com.example.batchfinal.custom.MyCustomTextView
+    <com.example.lmr.custom.MyCustomTextView
         android:id="@+id/signInAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/_15ssp" />
 
-    <com.example.batchfinal.custom.MyCustomEditText
+    <com.example.lmr.custom.MyCustomEditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
@@ -81,7 +81,7 @@
             android:layout_gravity="center_vertical"
             android:orientation="horizontal">
 
-            <com.example.batchfinal.custom.MyCustomTextView
+            <com.example.lmr.custom.MyCustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/outfit_regular"
@@ -90,7 +90,7 @@
                 android:textColor="@color/gry"
                 android:textSize="16sp" />
 
-            <com.example.batchfinal.custom.MyCustomTextView
+            <com.example.lmr.custom.MyCustomTextView
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
             android:layout_marginBottom="@dimen/_8sdp"
             android:background="@android:color/darker_gray" />
 
-        <com.example.batchfinal.custom.MyCustomTextView
+        <com.example.lmr.custom.MyCustomTextView
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -179,7 +179,7 @@
             android:importantForAccessibility="no"
             android:src="@drawable/google" />
 
-        <com.example.batchfinal.custom.MyCustomTextView
+        <com.example.lmr.custom.MyCustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#F0EFF2"
@@ -208,7 +208,7 @@
             android:importantForAccessibility="no"
             android:src="@drawable/microsoft" />
 
-        <com.example.batchfinal.custom.MyCustomTextView
+        <com.example.lmr.custom.MyCustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#F0EFF2"
@@ -237,7 +237,7 @@
             android:importantForAccessibility="no"
             android:src="@drawable/facebook" />
 
-        <com.example.batchfinal.custom.MyCustomTextView
+        <com.example.lmr.custom.MyCustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#F0EFF2"
@@ -266,7 +266,7 @@
             android:importantForAccessibility="no"
             android:src="@drawable/apple" />
 
-        <com.example.batchfinal.custom.MyCustomTextView
+        <com.example.lmr.custom.MyCustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#F0EFF2"

@@ -54,7 +54,7 @@
                         android:layout_weight="0.8"
                         android:orientation="vertical">
 
-                        <com.example.batchfinal.custom.MyCustomTextView
+                        <com.example.lmr.custom.MyCustomTextView
                             android:id="@+id/txt_trainer_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                             android:textColor="@color/black"
                             android:textSize="@dimen/_16ssp" />
 
-                        <com.example.batchfinal.custom.MyCustomTextView
+                        <com.example.lmr.custom.MyCustomTextView
                             android:id="@+id/txt_profesion"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                         android:textSize="@dimen/_9sdp" />
                 </LinearLayout>
 
-                <com.example.batchfinal.custom.MyCustomTextView
+                <com.example.lmr.custom.MyCustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_20sdp"
@@ -195,7 +195,7 @@
                     android:layout_marginTop="@dimen/_15sdp"
                     android:background="@color/gry2"/>
 
-                <com.example.batchfinal.custom.MyCustomTextView
+                <com.example.lmr.custom.MyCustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_20sdp"
@@ -210,7 +210,7 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:id="@+id/recycler_batches"/>
 
-                <com.example.batchfinal.custom.MyCustomTextView
+                <com.example.lmr.custom.MyCustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_20sdp"

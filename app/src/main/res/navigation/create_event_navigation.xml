@@ -12,7 +12,7 @@
 
     <activity
         android:id="@+id/createeventFragment"
-        android:name="com.example.batchfinal.view.fragment.BasicDetailsFragment"
+        android:name="com.example.lmr.view.fragment.BasicDetailsFragment"
         tools:layout="@layout/fragment_meal">
     </activity>
 
